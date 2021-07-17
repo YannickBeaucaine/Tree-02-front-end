@@ -1,15 +1,19 @@
+import Logo from './Images/T02greensm.png';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './CustomNavbar.css';
+
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
 
 
 const CustomNavbar = () => {
     return (
         <div>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="lg" bg="navbarColor" variant="dark">
   <Container>
-  <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+  <Navbar.Brand href="#home">
+    <img src={Logo} /> {''}
+    React-Bootstrap</Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
