@@ -1,0 +1,16 @@
+
+.bg-footerBlue{
+    background-color: rgb(37, 58, 179);
+    
+}
+.col-md-3{
+    color:white;
+}
+
+.list-unstyled{
+    color: white;
+}
+.text-sm-center{
+    font-size: smaller;
+    color:white;
+}

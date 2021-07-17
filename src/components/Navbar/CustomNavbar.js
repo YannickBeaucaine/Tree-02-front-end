@@ -1,4 +1,4 @@
-import Logo from './Images/T02greensm.png';
+import NavbarLogo from './t02greensm.png';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './CustomNavbar.css';
@@ -12,8 +12,8 @@ const CustomNavbar = () => {
             <Navbar collapseOnSelect expand="lg" bg="navbarColor" variant="dark">
   <Container>
   <Navbar.Brand href="#home">
-    <img src={Logo} /> {''}
-    React-Bootstrap</Navbar.Brand>
+    <img src={NavbarLogo} width ="78px"/> 
+  </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">
     <Nav className="me-auto">
