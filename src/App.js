@@ -1,7 +1,7 @@
 import React from 'react';
 //Bootstrap Components
-import Footer from './components/Footer/Footer';
-import Navbar from './components/Navbar/CustomNavbar';
+import Footer from './components/footer/Footer';
+import Navbar from './components/navbar/CustomNavbar';
 
 
 function App() {

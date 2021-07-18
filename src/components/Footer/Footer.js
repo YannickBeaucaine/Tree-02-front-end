@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Footer.css';
 
-function Footer() {
-    return (
-        <div className="fixed-bottom" >
+export default class Footer extends Component {
+    render() {
+        return (
+     
+                   <div className="fixed-bottom" >
             <div className="bg-footerBlue">
                 <div className="container">
                     <div className="row">
@@ -27,9 +29,7 @@ function Footer() {
                 </div>
             </div>
         </div>
-
-
-    )
+            
+        )
+    }
 }
-
-export default Footer
