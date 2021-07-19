@@ -1,5 +1,6 @@
-# Development
+# Dev
 
-Yarn add react-bootstrap bootstrap@5.0.2
-Yarn add react-router-dom
+- Yarn add react-bootstrap bootstrap@5.0.2
+
+- Yarn add react-router-dom
 
