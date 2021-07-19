@@ -11,6 +11,8 @@ export default function SignupForm() {
     }
   })
 
+  const [errorMessage, setErrorMessage] = useState('')
+
   const changeInput = e => {
     setSignUpForm({
       user:{
@@ -30,6 +32,11 @@ export default function SignupForm() {
     })
 
     const data = await response.json();
+    if(data.token){
+      localStorage.setItem('token', data.token)
+    }else{
+      setErrorMessage(data)
+    }
     console.log(data)
 
   }
@@ -42,6 +49,7 @@ export default function SignupForm() {
   const {name, email, password, password_confirmation} = signUpForm
   return (
     <div>
+      {errorMessage && Object.keys(errorMessage).map((key) => <p>{key} {errorMessage[key][0]}</p>)}
       <form onSubmit={signUpUser}>
         <label>Name</label><br />
         <input type="text" value={name} onChange={changeInput} name='name'/><br />
@@ -51,8 +59,8 @@ export default function SignupForm() {
         <input type="password" value={password} onChange={changeInput} name='password'/><br />
         <label>Confirm Password</label><br />
         <input type="password" value={password_confirmation} onChange={changeInput} name='password_confirmation'/><br />
+        <label>Select local store</label><br />
         <select name='store_id' onChange={changeInput} ><br />
-          <option selected>Local Store</option>
           <option value="1">The Corner Store Network</option>
         </select><br />
         <input type="submit" value="Sign Up"/>
