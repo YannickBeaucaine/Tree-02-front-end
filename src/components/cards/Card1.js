@@ -1,5 +1,6 @@
-import React from 'react'
-import Img1 from '../images/t02greenfull.png'
+import React from 'react';
+import Img1 from '../images/t02greenfull.png';
+import './Card1-style.css';
 
 const Card1 = props => {
     return (
