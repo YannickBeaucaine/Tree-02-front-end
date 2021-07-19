@@ -1,5 +1,5 @@
 import React from 'react'
-import Img1 from '../Images/t02greenfull.png'
+import Img1 from '../images/t02greenfull.png'
 
 const Card1 = props => {
     return (
