@@ -10,7 +10,7 @@ export default class Footer extends Component {
                 <div className="container">
                     <div className="row">
                         {/*Column Left*/}
-                        <div className="col-md-3 col-sm-6">
+                        {/* <div className="col-md-3 col-sm-6">
                             <h4>Hello</h4>
                             <ul className="list-unstyled"> 
                                 <li>Thing1</li>
@@ -18,7 +18,7 @@ export default class Footer extends Component {
                                 <li>Thing3</li>
                                 <li>Thing4</li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                     {/* Copyright */}
                     <div className="footer-bottom">

@@ -1,6 +1,7 @@
 
 .bg-footerBlue{
     background-color: rgb(37, 58, 179);
+   
     
 }
 .col-md-3{
@@ -14,4 +15,6 @@
     font-size: smaller;
     color:white;
     margin-bottom: 0px;
+    margin-top: 0px;
+   
 }
