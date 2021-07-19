@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NavbarLogo from '../Images/t02greensm.png';
+import NavbarLogo from '../images/t02greensm.png';
 import './CustomNavbar.css';
 // Bootstrap
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';

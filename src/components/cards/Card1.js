@@ -1,11 +1,11 @@
 import React from 'react'
-import Img1 from '../Images/t02greenfull.png'
+import Img1 from '../images/t02greenfull.png'
 
 const Card1 = props => {
     return (
         <div className="card text-center">
          <div className="overflow">
-            <img src= {Img1} alt="tree02 logo" />
+            <img src= {Img1} alt="tree02 logo" className="card-img-top" />
          </div>
          <div className="card-body text-dark">
              <h4 className="card-title">Card title</h4>
