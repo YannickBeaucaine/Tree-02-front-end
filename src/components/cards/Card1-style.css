@@ -3,8 +3,9 @@ body{
 }
 
 .card{
-    width:20rem;
     
+    width: 20rem;
+   
 }
 
 .card:hover{

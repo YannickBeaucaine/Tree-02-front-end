@@ -10,23 +10,25 @@ export default class Cards1 extends Component {
     render() {
         return (
             <div className="container-fluid d-flex justify-content-center">
-                <div className="row">
-                    <div className="col-md-4">
-                        <Card1 imgsrc={img1} partnername="The Corner Store Network"/>
-                    </div>
-                    <div className="col-md-4">
-                        <Card1 imgsrc={img2} partnername="Etiko"/>
-                    </div>
-                    <div className="col-md-4">
-                        <Card1 imgsrc={img3} partnername="WithOneSeed"/>
-                    </div>
-                    <div className="col-md-4">
-                        <Card1 imgsrc={img4} partnername="One Sustainable Planet"/>
-                    </div>
-                    <div className="col-md-4">
-                        <Card1 imgsrc={img5} partnername="Showroom-x"/>
-                    </div>
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <Card1 imgsrc={img1} partnername="The Corner Store Network"/>
+                        </div>
+                        <div className="col-lg-4">
+                            <Card1 imgsrc={img2} partnername="Etiko"/>
+                        </div>
+                        <div className="col-lg-4">
+                            <Card1 imgsrc={img3} partnername="WithOneSeed"/>
+                        </div>
                     
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <Card1 imgsrc={img4} partnername="One Sustainable Planet"/>
+                        </div>
+                        <div className="col-lg-4">
+                            <Card1 imgsrc={img5} partnername="Showroom-x"/>
+                        </div>
+                     </div>
                 </div>
                 
             </div>
