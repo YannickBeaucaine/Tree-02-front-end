@@ -1,15 +1,14 @@
 import React from 'react';
-import Img1 from '../images/t02greenfull.png';
 import './Card1-style.css';
 
 const Card1 = props => {
     return (
-        <div className="card text-center">
+        <div className="card text-center shadow">
          <div className="overflow">
-            <img src= {Img1} alt="tree02 logo" className="card-img-top" />
+            <img src= {props.imgsrc} alt="partner store logo" className="card-img-top" />
          </div>
          <div className="card-body text-dark">
-             <h4 className="card-title">Card title</h4>
+             <h4 className="card-title">{props.partnername}</h4>
              <p className="card-text text-secondary">
                  lorem ipsum dolor sit amet, consectetur
              </p>
