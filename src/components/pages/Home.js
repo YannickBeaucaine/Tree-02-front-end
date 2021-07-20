@@ -10,6 +10,7 @@ export default function Home() {
             {auth[0].loggedIn ? <h1>Logged In!</h1> : <h1>Not Logged in!</h1>}
             <h1>HOME</h1>
              <LoginForm />
+             <StatsSection />
         </div>
     )
 }
