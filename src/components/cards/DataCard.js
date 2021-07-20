@@ -1,7 +1,7 @@
 import React from 'react'
 import './Datacard-style.css'
 
-export const DataCard = () => {
+export const DataCard = props => {
     return (
         
                 
@@ -10,9 +10,9 @@ export const DataCard = () => {
                         <div className="col-lg-3 cold-md-6 col-sm-12">
                             <div className="stat-card">
                                 <div className="stat-image text-center py-4">
-                                    <img src= {StatImage} alt="Trees planted" />
+                                    <img src= {props.staticon} alt={props.staticonalt} />
                                  <div className="card-body text-center">
-                                    <h5 className="card-title text-uppercase">Trees Planted</h5>
+                                    <h5 className="card-title text-uppercase">{props.statname}</h5>
                                     <p className="card-text-secondary">well hello there</p>
                                  </div>
                                 </div>
