@@ -7,7 +7,7 @@ export const DataCard = props => {
                 
                 <div className="container data-cards">
                     
-                       
+                        {/* Card  */}
                             <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {props.staticon} alt={props.staticonalt} />
@@ -17,8 +17,8 @@ export const DataCard = props => {
                                  </div>
                                 </div>
                             </div>
-                        
-                    
+                        {/* Card end */}
+
                 </div>
                
          
