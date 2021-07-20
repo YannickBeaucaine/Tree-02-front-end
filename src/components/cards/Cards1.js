@@ -20,15 +20,12 @@ export default class Cards1 extends Component {
                         <div className="col-lg-4">
                             <Card1 imgsrc={img3} partnername="WithOneSeed"/>
                         </div>
-                    
-                    <div className="row">
                         <div className="col-lg-4">
                             <Card1 imgsrc={img4} partnername="One Sustainable Planet"/>
                         </div>
                         <div className="col-lg-4">
                             <Card1 imgsrc={img5} partnername="Showroom-x"/>
                         </div>
-                     </div>
                 </div>
                 
             </div>

@@ -9,9 +9,6 @@ const Card1 = props => {
          </div>
          <div className="card-body text-dark">
              <h4 className="card-title">{props.partnername}</h4>
-             <p className="card-text text-secondary">
-                 lorem ipsum dolor sit amet, consectetur
-             </p>
              {/* <a href="#" className="btn btn-outline-success"></a> */}
          </div>
      </div>
