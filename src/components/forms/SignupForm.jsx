@@ -33,7 +33,6 @@ export default function SignupForm() {
     })
 
     const data = await response.json();
-    console.log(data)
     if(data.token){
       localStorage.setItem('token', data.token)
       localStorage.setItem('name', data.name)
