@@ -1,22 +1,10 @@
 import React from 'react'
-import StatImage from '../images/statsicons/trees-icon.png'
 import './Datacard-style.css'
 
 export const DataCard = () => {
     return (
-        <div className="measure-section">
-            {/* section container  */}
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-12 text-center data-title">
-                        <h1 className="text-uppercase title-text">Measure our impact</h1>
-                        <p className="para">
-                            Thanks to our contributors we ave achieved :
-                        </p>
-
-                    </div>
-                </div>
-                {/* cards section  */}
+        
+                
                 <div className="container data-cards">
                     <div className="row">
                         <div className="col-lg-3 cold-md-6 col-sm-12">
@@ -32,9 +20,8 @@ export const DataCard = () => {
                         </div>
                     </div>
                 </div>
-                {/* card section end  */}
-            </div>
-        </div>
+               
+         
     )
 }
 export default DataCard;
