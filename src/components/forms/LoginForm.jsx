@@ -1,13 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { AuthContext } from '../context/AuthProvider'
 
 export default function LoginForm() {
+
+  const [auth, setAuth] = useContext(AuthContext);
 
   const [loginForm, setLoginForm] = useState({
       email: '',
       password: ''
-  })
+  });
 
-  const [errorMessage, setErrorMessage] = useState('')
+  const [errorMessage, setErrorMessage] = useState('');
 
   const changeInput = e => {
     setLoginForm({
@@ -26,13 +29,25 @@ export default function LoginForm() {
     })
 
     const data = await response.json();
+
     if(data.token){
       localStorage.setItem('token', data.token)
+      localStorage.setItem('name', data.name)
+      localStorage.setItem('key', data.key)
+      localStorage.setItem('store_id', data.store_id)
+      setAuth({
+        ...auth,
+        loggedIn: true,
+        name: data.name,
+        email: data.email,
+        key: data.key,
+        store_id: data.store_id,
+        token: data.token
+      });
     }
     else{
       setErrorMessage(data)
     }
-    console.log(data)
   }
 
 

@@ -34,11 +34,13 @@ export default function SignupForm() {
     const data = await response.json();
     if(data.token){
       localStorage.setItem('token', data.token)
+      localStorage.setItem('name', data.name)
+      localStorage.setItem('key', data.key)
+      localStorage.setItem('store_id', data.store_id)
+
     }else{
       setErrorMessage(data)
     }
-    console.log(data)
-
   }
 
   const signUpUser = e => {
