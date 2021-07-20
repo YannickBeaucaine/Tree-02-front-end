@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Cards1 from '../cards/Cards1';
-import './Header-style.css'
+import './Header-style.css';
 
 export default class Partners extends Component {
     render() {
