@@ -8,7 +8,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -59,6 +60,7 @@ export default class CustomNavbar extends Component {
         {/* react router functions   */}
         <div>
           <Switch>
+            <Route exact path="/" component={() => (<Redirect to='/home' />)} />
             <Route path="/home">
               <Home />
             </Route>
