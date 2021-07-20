@@ -1,0 +1,17 @@
+.data-title{
+    font-weight: 800;
+}
+.title-text{
+    font-weight: 800;
+}
+
+.stat-card {
+    background:rgba(248,252,253,0.937);
+    padding: 2rem 0;
+    margin: 2rem .5rem;
+    transition: box-shadow .7s ease;
+
+}
+.stat-card:hover{
+    box-shadow: var(--box-shadow);
+}

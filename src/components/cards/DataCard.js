@@ -1,5 +1,6 @@
 import React from 'react'
 import StatImage from '../images/dataimages/trees-icon.png'
+import './Datacard-style.css'
 
 export const DataCard = () => {
     return (
@@ -19,7 +20,7 @@ export const DataCard = () => {
                 <div className="container data-cards">
                     <div className="row">
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                            <div className="stat">
+                            <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {StatImage} alt="Trees planted" />
                                  <div className="card-body text-center">
@@ -30,7 +31,7 @@ export const DataCard = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                            <div className="stat">
+                            <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {StatImage} alt="Trees planted" />
                                  <div className="card-body text-center">
@@ -41,7 +42,7 @@ export const DataCard = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                            <div className="stat">
+                            <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {StatImage} alt="Trees planted" />
                                  <div className="card-body text-center">
@@ -52,7 +53,7 @@ export const DataCard = () => {
                             </div>
                         </div>
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                            <div className="stat">
+                            <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {StatImage} alt="Trees planted" />
                                  <div className="card-body text-center">
