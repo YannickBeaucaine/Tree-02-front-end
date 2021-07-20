@@ -6,8 +6,8 @@ export const DataCard = props => {
         
                 
                 <div className="container data-cards">
-                    <div className="row">
-                        <div className="col-lg-3 cold-md-6 col-sm-12">
+                    
+                       
                             <div className="stat-card">
                                 <div className="stat-image text-center py-4">
                                     <img src= {props.staticon} alt={props.staticonalt} />
@@ -17,8 +17,8 @@ export const DataCard = props => {
                                  </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        
+                    
                 </div>
                
          

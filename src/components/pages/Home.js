@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import LoginForm from '../forms/LoginForm'
-import DataCard from '../cards/DataCard'
+import StatsSection from '../sections/StatsSection'
 
 export default class Home extends Component {
     render() {
@@ -8,7 +8,7 @@ export default class Home extends Component {
             <div>
                 <h1>HOME</h1>
                 <LoginForm />
-                <DataCard />
+                <StatsSection />
             </div>
         )
     }
