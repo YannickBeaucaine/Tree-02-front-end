@@ -64,7 +64,7 @@ export default function CustomNavbar() {
                     <Nav.Link as={Link} to={"/Signup"}>Signup</Nav.Link>
                   )}
                   {auth.loggedIn && (
-                    <div>
+                    <>
                       <Navbar.Text>
                         Signed in as: <a href="#login">{auth.name}</a>
                       </Navbar.Text>
@@ -73,7 +73,7 @@ export default function CustomNavbar() {
                       <NavDropdown.Divider />
                       <NavDropdown.Item href="#action/3.4" onClick={signOut}>Sign out</NavDropdown.Item>
                       </NavDropdown>
-                    </div>
+                    </>
                   )}
                   
                 </Nav>
