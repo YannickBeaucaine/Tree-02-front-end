@@ -1,0 +1,33 @@
+.card-container{
+    padding-top: 5rem;
+ 
+}
+
+.card-long{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    
+    
+}
+.card-title{
+    font-weight: 800;
+    color: rgb(37, 58, 179);
+}
+.row{
+    padding: 0 5rem;
+}
+.card-content{
+    font-size:x-large;
+    color: rgb(37, 58, 179);
+    
+}
+
+
+.card-img{
+    background-image:url('../images/bg-forest.jpeg');
+    margin-top: 3rem;
+  
+    
+}

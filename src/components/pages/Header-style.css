@@ -1,20 +1,23 @@
-.about-header{
+.header{
     background-color: #00FFB4;
     height: 80px;
     box-shadow: 0px 0px 5px 0px;
     
 }
 
-.about-title{
+.header-title{
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top:1rem;
     color: #253AB3 ;
+    text-shadow: 
+	4px 4px #f3f3f3 ,
+	8px 8px #0000002f;
     
-    
+   
 }
 
-.about-font{
+.header-font{
     font-weight: 900;
 }

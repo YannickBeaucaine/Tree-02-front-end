@@ -9,7 +9,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  Redirect
 } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -63,7 +64,7 @@ export default function CustomNavbar() {
                     <Nav.Link as={Link} to={"/Signup"}>Signup</Nav.Link>
                   )}
                   {auth.loggedIn && (
-                    <div>
+                    <>
                       <Navbar.Text>
                         Signed in as: <a href="#login">{auth.name}</a>
                       </Navbar.Text>
@@ -72,7 +73,7 @@ export default function CustomNavbar() {
                       <NavDropdown.Divider />
                       <NavDropdown.Item href="#action/3.4" onClick={signOut}>Sign out</NavDropdown.Item>
                       </NavDropdown>
-                    </div>
+                    </>
                   )}
                   
                 </Nav>
@@ -83,6 +84,7 @@ export default function CustomNavbar() {
         {/* react router functions   */}
         <div>
           <Switch>
+            <Route exact path="/" component={() => (<Redirect to='/home' />)} />
             <Route path="/home">
               <Home />
             </Route>
