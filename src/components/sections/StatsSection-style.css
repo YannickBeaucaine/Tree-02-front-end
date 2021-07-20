@@ -1,0 +1,15 @@
+.stats-section{
+    background-color:rgb(77,0,122);
+    padding-top: 1rem;
+    margin-top: 3.5rem;
+}
+
+.data-title{
+    font-weight: 800;
+    color: white;
+}
+.title-text{
+    font-weight: 800;
+    padding-top: 2rem;
+    color: white
+}
