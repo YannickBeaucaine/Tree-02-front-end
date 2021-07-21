@@ -18,10 +18,10 @@ export const TreesCard = () => {
               <div className='col-md-7'>
                   <h1 className="card-title mt-2 text-center">Thank You "username"</h1>
                     <p className="card-content text-center">
-                    You have adopted "" trees<br/>
-                    Your carbon impact <br/>
-                    Number 3 <br/>
-                    Number 4 <br/>
+                    You have adopted "" trees-----------     
+                    Your carbon impact------------------
+                    Number 3----------------------------
+                    Number 4----------------------------
                     </p>
               </div>
               {/* end of right column */}
