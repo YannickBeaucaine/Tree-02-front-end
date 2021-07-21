@@ -1,5 +1,8 @@
 import React from 'react';
 import './MyStoreCard-style.css';
+import StoreImgCard from './StoreImgCard';
+import CornerStoreImg from '../images/stores/corner-store.jpg';
+import { Link } from 'react-router-dom';
 
 
 export const MyStoreCard = () => {
@@ -23,10 +26,9 @@ export const MyStoreCard = () => {
                    {/* end of mid column */}
                {/* right column  */}
                 <div className='col-md-3 store-img-right'>
-                    <h1 className="card-title mt-2 text-center"></h1>
-                      <p className="card-content text-center">
-                  
-                    </p>
+                    <Link to={{ pathname: "https://cornerstorenetwork.org.au/"}} target="_blank">
+                         <StoreImgCard currentstoreimg={CornerStoreImg} />
+                   </Link>
               </div>
               {/* end of right column */}
             </div>
@@ -36,6 +38,8 @@ export const MyStoreCard = () => {
     );
   }
              
+                    
+
   
 
 export default MyStoreCard;
