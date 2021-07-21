@@ -1,5 +1,4 @@
 import React from 'react';
-import CornerStore from '../images/stores/corner-store.jpg';
 
 export const StoreImgCard = props => {
     return (
