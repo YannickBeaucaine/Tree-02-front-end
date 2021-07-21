@@ -19,6 +19,7 @@ import Adopt from "../pages/Adopt";
 import Partners from "../pages/Partners";
 import Account from "../pages/Account";
 import Mytrees from "../pages/MyTrees";
+import Mystore from "../pages/MyStore";
 
 export default function CustomNavbar() {
 
@@ -70,6 +71,7 @@ export default function CustomNavbar() {
                       </Navbar.Text>
                       <NavDropdown title="My Account" id="collasible-nav-dropdown">
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to={"/Mystore"}>My store</NavDropdown.Item>
                       <NavDropdown.Divider />
                       <NavDropdown.Item href="#action/3.4" onClick={signOut}>Sign out</NavDropdown.Item>
                       </NavDropdown>
@@ -105,6 +107,9 @@ export default function CustomNavbar() {
             </Route>
             <Route path="/mytrees">
               <Mytrees />
+            </Route>
+            <Route path="/mystore">
+              <Mystore />
             </Route>
           </Switch>
         </div>
