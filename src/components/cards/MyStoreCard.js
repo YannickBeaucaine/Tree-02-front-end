@@ -1,5 +1,8 @@
 import React from 'react';
 import './MyStoreCard-style.css';
+import StoreImgCard from './StoreImgCard';
+import CornerStoreImg from '../images/stores/corner-store.jpg';
+import { Link } from 'react-router-dom';
 
 
 export const MyStoreCard = () => {
@@ -8,25 +11,37 @@ export const MyStoreCard = () => {
         <div className='card-long'>
             <div className='row'>
               {/* left column */}
-              <div className='col-md-6 store-map-left'>
+              <div className='col-lg-6 store-map-left'>
                 {/* place map here  */}
                   {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}
                 </div>
                 {/* end of left column  */}
                     {/* mid column  */}
-                    <div className='col-md-3 store-descp-mid'>
+                    <div className='col-lg-3 store-descp-mid'>
                         {/* <h1 className="">This is your store </h1> */}
-                          <p className="card-title mt-2 text-center">
-                            This is the business information, bla bla bla bla
+                          <p className="card-title mt-5 text-center">
+                          Why The Corner Store Network?
+                          Because business as usual isn’t working.   
+                          Globally, we waste roughly 1.3 billion tonnes of food annually, we emit roughly 36 billion tonnes of CO2  annually, and whilst many of us love our morning latte, coffee farmers are some of the lowest paid farmers in the world. 
+                          And we’re not ok with any of that.   
+ 
+ 
                           </p>
                     </div>
                    {/* end of mid column */}
                {/* right column  */}
-                <div className='col-md-3 store-img-right'>
-                    <h1 className="card-title mt-2 text-center"></h1>
-                      <p className="card-content text-center">
-                  
-                    </p>
+               
+                <div className='col-lg-3 store-img-right'>
+                    <Link to={{ pathname: "https://cornerstorenetwork.org.au/"}} style={{ textDecoration: 'none' }} target="_blank">
+                         <StoreImgCard currentstoreimg={CornerStoreImg} />
+                         <div className='col-auto'>
+                            <h5 className='text-center store-info'>
+                            42 Regent Street, Oakleigh, 
+                            VIC 3166 Australia <br/>
+                            0460 785 085 
+                           </h5> 
+                         </div>
+                   </Link>
               </div>
               {/* end of right column */}
             </div>
@@ -36,6 +51,9 @@ export const MyStoreCard = () => {
     );
   }
              
-  
+                    
+                            
+  export default MyStoreCard;
 
-export default MyStoreCard;
+
+  
