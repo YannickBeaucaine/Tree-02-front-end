@@ -36,11 +36,13 @@ export default function SignupForm() {
     if(data.token){
       localStorage.setItem('token', data.token)
       localStorage.setItem('name', data.name)
+      localStorage.setItem('email', data.email)
       localStorage.setItem('key', data.key)
-      localStorage.setItem('store_id', data.store_id)
+      localStorage.setItem('store_key', data.store.key)
 
     }else{
       setErrorMessage(data)
+      console.log(errorMessage)
     }
   }
 
@@ -52,7 +54,6 @@ export default function SignupForm() {
   const {name, email, password, password_confirmation} = signUpForm
   return (
     <div>
-      {errorMessage && Object.keys(errorMessage).map((key1) => <p>{key1} {errorMessage[key1][0]}</p>)}
       <form onSubmit={signUpUser}>
         <label>Name</label><br />
         <input type="text" value={name} onChange={changeInput} name='name'/><br />
