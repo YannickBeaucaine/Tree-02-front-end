@@ -1,7 +1,7 @@
 import React from 'react';
-import './TreeCard-style.css';
+import './TreesCard-style.css';
 
-export const TreeCard = () => {
+export const TreesCard = () => {
     return (
 
         <div>
@@ -11,4 +11,4 @@ export const TreeCard = () => {
   }
   
 
-export default TreeCard;
+export default TreesCard;
