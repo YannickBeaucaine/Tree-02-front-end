@@ -2,6 +2,7 @@ import React from 'react'
 import './Datacard-style.css'
 
 export const DataCard = props => {
+    const {staticon,staticonalt,...statDetails} = props;
     return (
         
                 
@@ -10,10 +11,10 @@ export const DataCard = props => {
                         {/* Card  */}
                             <div className="stat-card">
                                 <div className="stat-image text-center py-4">
-                                    <img src= {props.staticon} alt={props.staticonalt} />
+                                    <img src= {staticon} alt={staticonalt} />
                                  <div className="card-body text-center">
-                                    <h5 className="card-title text-uppercase">{props.statname}</h5>
-                                    <p className="card-text-secondary">well hello there</p>
+                                    <h5 className="card-title text-uppercase">{statDetails.statname}</h5>
+                                    <p className="card-text-secondary">{statDetails.statnumber}</p>
                                  </div>
                                 </div>
                             </div>

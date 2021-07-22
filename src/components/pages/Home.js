@@ -1,8 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import LoginForm from '../forms/LoginForm'
 import StatsSection from '../sections/StatsSection'
 
 export default function Home() {
+
+    const [data, setData] = useState()
 
     useEffect(() => {
 
@@ -27,6 +29,7 @@ export default function Home() {
               const data = await response.json();
               console.log('Data')
               console.log(data)
+              setData(data.result)
               sessionStorage.setItem('getDashboardStats', JSON.stringify(data.result));
 
             }
@@ -37,7 +40,7 @@ export default function Home() {
     return (
         <div>
              <LoginForm />
-             <StatsSection />
+             <StatsSection data={data} />
         </div>
     )
 }

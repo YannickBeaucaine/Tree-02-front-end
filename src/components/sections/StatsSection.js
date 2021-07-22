@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 // styling import
 import './StatsSection-style.css'
 
@@ -10,8 +10,13 @@ import MoneyImg from '../images/statsicons/money-tree-icon.png';
 import CloudImg from '../images/statsicons/cloud-download-icon.png';
 
 
-export default class StatsSection extends Component {
-    render() {
+const StatsSection = ({data}) => {
+
+
+        
+        if(!data){
+            return null;
+        }
         return (
             <div className="stats-section">
          
@@ -29,7 +34,7 @@ export default class StatsSection extends Component {
                     <div className="row">
                         {/* card 1  */}
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                             <DataCard staticon={TreeImg} statname="Trees Planted" staticonalt="tree icon"/>
+                             <DataCard staticon={TreeImg} statname="Trees Planted" statnumber={data.totalTreeCount} staticonalt="tree icon"/>
                         </div>
                         {/* card 2  */}
                         <div className="col-lg-3 cold-md-6 col-sm-12">
@@ -48,5 +53,5 @@ export default class StatsSection extends Component {
             </div>
         </div>
         )
-    }
 }
+export default StatsSection;
