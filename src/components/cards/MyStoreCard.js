@@ -8,11 +8,11 @@ import MyStoreMap from '../maps/MyStoreMap'
 
 export const MyStoreCard = () => {
     return (
-      <div className='card-container'>
+      <div className='card-container '>
         <div className='card-long'>
             <div className='row'>
               {/* left column */}
-              <div className='col-lg-6 store-map-left'>
+              <div className='col-lg-6 store-map-left map-responsive'>
                 {/* place map here  */}
                   {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}
                   <MyStoreMap />
@@ -21,7 +21,7 @@ export const MyStoreCard = () => {
                     {/* mid column  */}
                     <div className='col-lg-3 store-descp-mid'>
                         {/* <h1 className="">This is your store </h1> */}
-                          <p className="card-title mt-5 text-center">
+                          <p className="card-title mt-3 text-center">
                           Why The Corner Store Network?
                           Because business as usual isn’t working.   
                           Globally, we waste roughly 1.3 billion tonnes of food annually, we emit roughly 36 billion tonnes of CO2  annually, and whilst many of us love our morning latte, coffee farmers are some of the lowest paid farmers in the world. 

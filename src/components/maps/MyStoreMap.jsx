@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-
-const mapStyles = {
-  width: '600px',
-  height: '350px'
-};
+import './MyStoreMap-style.css'
 
 let data = JSON.parse(sessionStorage.getItem('getAdopters'))
 let trees = data.map((adopter) => {
@@ -47,7 +43,6 @@ export class MyStoreMap extends Component {
       <Map
         google={this.props.google}
         zoom={12}
-        style={mapStyles}
         initialCenter={
           {
             lat: allTrees[0].lat,
@@ -62,5 +57,7 @@ export class MyStoreMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyBWtZTsxX-PhM2tT5lWwRlf49VEux_we0I'
+  apiKey: 'AIzaSyAT3JkHOQafBwyfeFWg39q-hDaUss6FLnc'
 })(MyStoreMap);
+     
+ 
