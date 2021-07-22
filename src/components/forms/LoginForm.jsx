@@ -31,11 +31,11 @@ export default function LoginForm() {
     const data = await response.json();
 
     if(data.token){
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('name', data.name)
-      localStorage.setItem('email', data.email)
-      localStorage.setItem('key', data.key)
-      localStorage.setItem('store_key', data.store.key)
+      sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('name', data.name)
+      sessionStorage.setItem('email', data.email)
+      sessionStorage.setItem('key', data.key)
+      sessionStorage.setItem('store_key', data.store.key)
       setAuth({
         ...auth,
         loggedIn: true,
@@ -56,7 +56,7 @@ export default function LoginForm() {
 
     let body = {
       jsonrpc: '2.0',
-      id: '1234',
+      id: Math.random().toString(36).slice(2),
       method: `${method}`
     }
 
@@ -71,7 +71,7 @@ export default function LoginForm() {
       body: JSON.stringify(body) 
     });
     const data = await response.json();
-    localStorage.setItem(method, JSON.stringify(data.result));
+    sessionStorage.setItem(method, JSON.stringify(data.result));
 
   }
 
@@ -79,8 +79,8 @@ export default function LoginForm() {
   const loginUser = e => {
     e.preventDefault();
     postLogin();
-    treeAPIrequest('getCurrentPartner', localStorage.getItem('store_key'));
-    treeAPIrequest('getAdopters', localStorage.getItem('store_key'));
+    treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key'));
+    treeAPIrequest('getAdopters', sessionStorage.getItem('store_key'));
   }
 
   
