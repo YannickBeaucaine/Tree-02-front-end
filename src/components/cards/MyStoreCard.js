@@ -3,6 +3,7 @@ import './MyStoreCard-style.css';
 import StoreImgCard from './StoreImgCard';
 import CornerStoreImg from '../images/stores/corner-store.jpg';
 import { Link } from 'react-router-dom';
+import MyStoreMap from '../maps/MyStoreMap'
 
 
 export const MyStoreCard = () => {
@@ -14,6 +15,7 @@ export const MyStoreCard = () => {
               <div className='col-lg-6 store-map-left'>
                 {/* place map here  */}
                   {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}
+                  <MyStoreMap />
                 </div>
                 {/* end of left column  */}
                     {/* mid column  */}

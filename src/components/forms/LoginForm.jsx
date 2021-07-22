@@ -42,7 +42,6 @@ export default function LoginForm() {
         name: data.name,
         email: data.email,
         key: data.key,
-        store_id: data.store.id,
         token: data.token
       });
     }

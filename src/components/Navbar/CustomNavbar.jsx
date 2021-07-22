@@ -26,20 +26,17 @@ export default function CustomNavbar() {
   const [auth, setAuth] = useContext(AuthContext);
 
   const signOut = () =>{
-    localStorage.removeItem('token');
-    localStorage.removeItem('name');
-    localStorage.removeItem('store_id');
-    localStorage.removeItem('key');
+    sessionStorage.removeItem('token');
+    sessionStorage.removeItem('name');
+    sessionStorage.removeItem('store_id');
+    sessionStorage.removeItem('key');
     setAuth({
       loggedIn: false,
       name: null,
       email: null,
-      store_id: null,
       token: null
     });
   }
-
-  console.log(auth)
 
   return (
     <Router>
