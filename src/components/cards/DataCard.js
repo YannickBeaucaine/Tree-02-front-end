@@ -10,11 +10,13 @@ export const DataCard = props => {
                     
                         {/* Card  */}
                             <div className="stat-card">
-                                <div className="stat-image text-center py-4">
+                                <div className="stat-image text-center py-2">
                                     <img src= {staticon} alt={staticonalt} />
                                  <div className="card-body text-center">
                                     <h5 className="card-title text-uppercase">{statDetails.statname}</h5>
-                                    <p className="card-text-secondary">{statDetails.statnumber}</p>
+                                   
+                                    <p className="card-text-secondary stat-number">{statDetails.statnumber}</p>
+                                   
                                  </div>
                                 </div>
                             </div>

@@ -38,15 +38,15 @@ const StatsSection = ({data}) => {
                         </div>
                         {/* card 2  */}
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                             <DataCard staticon={FarmImg} statname="Farmers" staticonalt="farmer icon"/>
+                             <DataCard staticon={FarmImg} statname="Farmers" statnumber={data.totalFarmers} staticonalt="farmer icon"/>
                         </div>
                         {/* card 3  */}
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                             <DataCard staticon={MoneyImg} statname="Farmers earnings" staticonalt="farmer iscon icon"/>
+                             <DataCard staticon={MoneyImg} statname="Farmers earnings" statnumber={data.totalFarmerEarnings} staticonalt="farmer iscon icon"/>
                         </div>
                         {/* card 4  */}
                         <div className="col-lg-3 cold-md-6 col-sm-12">
-                             <DataCard staticon={CloudImg} statname="CO2 Asborbed in Tonnes" staticonalt="Co2 absorbtion icon"/>
+                             <DataCard staticon={CloudImg} statname="CO2 Asborbed" statnumber={data.tonnesOfCarbonSequestered} staticonalt="Co2 absorbtion icon"/>
                         </div>
                     </div>
                 {/* card section end  */}
