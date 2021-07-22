@@ -1,5 +1,6 @@
-import React, { useState, useContext } from 'react'
-import { AuthContext } from '../context/AuthProvider'
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../context/AuthProvider';
+import './LoginForm-style.css'
 
 export default function LoginForm() {
 
@@ -85,14 +86,21 @@ export default function LoginForm() {
 
   
   return (
-    <div>
-      <form onSubmit={loginUser}>
-        <label>Email</label><br />
-        <input type="text" value={loginForm.email} onChange={changeInput} name='email'/><br />
-        <label>Password</label><br />
-        <input type="password" value={loginForm.password} onChange={changeInput} name='password'/><br />
-        <input type="submit" value="Login"/>
-      </form>
+    <div className="container login-form">
+        <div className='row text-center login-field'>
+          <form onSubmit={loginUser}>
+             <div className="email-field">
+                <label>Email</label><br />
+                <input className="email-input" type="text" value={loginForm.email} onChange={changeInput} name='email'/><br />
+              </div>
+              <div className="password-field">
+                <label>Password</label><br />
+                <input  className="password-input" type="password" value={loginForm.password} onChange={changeInput} name='password'/><br />
+              </div>
+              <input className="submit-button" type="submit" value="Login"/>
+
+          </form>
+        </div>
     </div>
   )
 }
