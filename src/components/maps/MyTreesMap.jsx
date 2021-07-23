@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import './MyTreesMap-style.css'
+
 
 export class MyTreeMap extends Component {
   constructor(props) {
@@ -16,6 +16,10 @@ export class MyTreeMap extends Component {
         title={tree.farmerName}
         position={{lat: tree.lat, lng: tree.lon}}
         key={tree.treeID}
+        icon={{
+          url: '/maptree2.png',
+      
+        }}
       >
       </Marker>
     ));
@@ -28,8 +32,8 @@ export class MyTreeMap extends Component {
         zoom={12}
         initialCenter={
           {
-            lat: JSON.parse(sessionStorage.getItem('adopterTrees'))[0].lat,
-            lng: JSON.parse(sessionStorage.getItem('adopterTrees'))[0].lon
+            lat: JSON.parse(sessionStorage.getItem('adopterTrees'))[3].lat,
+            lng: JSON.parse(sessionStorage.getItem('adopterTrees'))[2].lon
           }
         }
       >

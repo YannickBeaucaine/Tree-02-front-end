@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import './MyStoreMap-style.css'
+
 
 
 export class MyStoreMap extends Component {
@@ -22,6 +22,10 @@ export class MyStoreMap extends Component {
         title={tree.farmerName}
         position={{lat: tree.lat, lng: tree.lon}}
         key={tree.treeID}
+        icon={{
+          url: '/maptree2.png',
+      
+        }}
       >
       </Marker>
     ));

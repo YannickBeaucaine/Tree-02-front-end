@@ -12,7 +12,7 @@ export const MyStoreCard = () => {
         <div className='card-long'>
             <div className='row'>
               {/* left column */}
-              <div className='col-lg-6 store-map-left map-responsive'>
+              <div className='col-lg-6 store-map-left store-map-responsive'>
                 {/* place map here  */}
                   {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}
                   <MyStoreMap />

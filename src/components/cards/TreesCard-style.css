@@ -1,10 +1,9 @@
-.map-left{
 
-    border: 1px solid black;
-
-}
-
-.cust-stats-right{
-    border: 1px solid black;
-
+.tree-map-responsive{
+    overflow:hidden;
+    padding-bottom: 40vh;
+    position:relative;
+    padding-left: 0;
+    margin-left: 0;
+   
 }

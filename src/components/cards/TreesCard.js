@@ -10,7 +10,7 @@ export const TreesCard = () => {
       <div className='card-long'>
           <div className='row'>
              {/* left column */}
-             <div className='col-md-5 map-left'>
+             <div className='col-md-5 map-left tree-map-responsive'>
               {/* place map here  */}
               <MyTreesMap />
                  {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}

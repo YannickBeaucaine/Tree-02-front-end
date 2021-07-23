@@ -1,3 +1,11 @@
 .store-info{
     color: rgb(37,58,179);
 }
+
+.store-map-responsive{
+    overflow:hidden;
+    padding-bottom: 50vh;
+    position:relative;
+    height:0;
+    padding-left: 0;
+}
