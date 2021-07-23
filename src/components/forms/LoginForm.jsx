@@ -32,30 +32,7 @@ export default function LoginForm() {
       },
       body: JSON.stringify(loginForm)
     })
-
-    const data = await response.json();
-
-    if(data.token){
-      sessionStorage.setItem('token', data.token)
-      sessionStorage.setItem('name', data.name)
-      sessionStorage.setItem('email', data.email)
-      sessionStorage.setItem('key', data.key)
-      sessionStorage.setItem('store_key', data.store.key)
-      setAuth({
-        ...auth,
-        loggedIn: true,
-        name: data.name,
-        email: data.email,
-        key: data.key,
-        token: data.token
-      });
-      // rerouting to a page when logged in  3/3
-      history.push('/About')
-    }
-    else{
-      setErrorMessage(data)
-      console.log(errorMessage)
-    }
+    return await response.json();
   }
 
   function error(value) {
@@ -66,6 +43,7 @@ export default function LoginForm() {
 
   const treeAPIrequest = async (method, token, user_key) => {
     
+   
     let body = {
       jsonrpc: '2.0',
       id: Math.random().toString(36).slice(2),
@@ -87,22 +65,53 @@ export default function LoginForm() {
           'Authorization': `Bearer ${token}`
 
         },
-        body: JSON.stringify(body) 
+        body: JSON.stringify(body)
       });
-    const data = await response.json();
-    sessionStorage.setItem(method, JSON.stringify(data.result))
+    return await response.json();
+    
+    console.log('success')
     } catch(err) {
       error(err)
+      console.log('fail')
     }
+    
   }
-
 
   const loginUser = e => {
     e.preventDefault();
-    postLogin();
-    treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key'));
-    treeAPIrequest('getAdopters', sessionStorage.getItem('store_key'));
-    treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key'));
+    postLogin().then((response) => {
+      if(response.token){
+        sessionStorage.setItem('token', response.token)
+        sessionStorage.setItem('name', response.name)
+        sessionStorage.setItem('email', response.email)
+        sessionStorage.setItem('key', response.key)
+        sessionStorage.setItem('store_key', response.store.key)
+        setAuth({
+          ...auth,
+          loggedIn: true,
+          name: response.name,
+          email: response.email,
+          key: response.key,
+          token: response.token
+        });
+        // rerouting to a page when logged in  3/3
+  
+      }
+      else{
+        setErrorMessage(response)
+        console.log(errorMessage)
+      }
+    })
+    treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
+      sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
+    })
+    treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
+      sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
+    })
+    treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
+      sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
+      history.push('/MyStore')
+    })
   }
 
   
