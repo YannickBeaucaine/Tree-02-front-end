@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import './LoginForm-style.css'
+import {useHistory} from 'react-router-dom';
 
 export default function LoginForm() {
-
+  const history = useHistory();
   const [auth, setAuth] = useContext(AuthContext);
 
   const [loginForm, setLoginForm] = useState({
@@ -46,6 +47,7 @@ export default function LoginForm() {
         key: data.key,
         token: data.token
       });
+      history.push('/Mystore')
     }
     else{
       setErrorMessage(data)
