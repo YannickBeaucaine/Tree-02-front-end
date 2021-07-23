@@ -20,6 +20,7 @@ export default function LoginForm() {
   }
 
   const postLogin = async () => {
+    
     const response = await fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: {
@@ -51,27 +52,36 @@ export default function LoginForm() {
     }
   }
 
-  const treeAPIrequest = async (method, token) => {
+  function error(value) {
+    if (console) {
+        console.error(value)
+    }
+}
 
+  const treeAPIrequest = async (method, token) => {
+    
     let body = {
       jsonrpc: '2.0',
       id: Math.random().toString(36).slice(2),
       method: `${method}`
     }
-
-    const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-type': 'application/json, charset=utf-8',
-        'X-AppType': 'Partner',
-        'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify(body) 
-    });
+    
+    try {
+      const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json, charset=utf-8',
+          'X-AppType': 'Partner',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(body) 
+      });
     const data = await response.json();
-    sessionStorage.setItem(method, JSON.stringify(data.result));
-
+    sessionStorage.setItem(method, JSON.stringify(data.result))
+    } catch(err) {
+      error(err)
+    }
   }
 
 

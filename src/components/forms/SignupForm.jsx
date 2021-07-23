@@ -6,8 +6,7 @@ export default function SignupForm() {
       name: '',
       email: '',
       password: '',
-      password_confirmation: '',
-      store_id: ''
+      password_confirmation: ''
     }
   })
 
@@ -34,11 +33,11 @@ export default function SignupForm() {
 
     const data = await response.json();
     if(data.token){
-      localStorage.setItem('token', data.token)
-      localStorage.setItem('name', data.name)
-      localStorage.setItem('email', data.email)
-      localStorage.setItem('key', data.key)
-      localStorage.setItem('store_key', data.store.key)
+      sessionStorage.setItem('token', data.token)
+      sessionStorage.setItem('name', data.name)
+      sessionStorage.setItem('email', data.email)
+      sessionStorage.setItem('key', data.key)
+      sessionStorage.setItem('store_key', data.store.key)
 
     }else{
       setErrorMessage(data)
