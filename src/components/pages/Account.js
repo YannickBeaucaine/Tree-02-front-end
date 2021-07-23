@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Header-style.css';
+import MyAccountCard from '../cards/MyAccountCard'
 
 export default class Account extends Component {
     render() {
@@ -10,7 +11,7 @@ export default class Account extends Component {
                          <h1 className="header-font">MY ACCOUNT</h1>
                     </div>
                 </div>
-             
+              <MyAccountCard />
             
             </div>
         )
