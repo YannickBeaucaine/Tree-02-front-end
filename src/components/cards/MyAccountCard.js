@@ -17,25 +17,30 @@ const MyAccountCard = () => {
                                 something@gmail.com
                             </div>
                         </ListGroup.Item>
-                            <Button className='edit-button' variant="secondary" size="sm">
+                            <Button className='edit-button' variant="outline-dark" size="sm">
                                 Edit Email
                             </Button>
                         {/* end of email line  */}
-                          {/* password line  */}
+                          {/* username line  */}
                           <ListGroup.Item>
                             < div className='name-left line-one'>
                                 Username
                             </div>
                         </ListGroup.Item>
-                            <Button className='edit-button' variant="secondary" size="sm">
+                            <Button className='edit-button' variant="outline-dark" size="sm">
                                 Edit Username
                             </Button>
-                        {/* end of password line  */}
-                        {/* first line  */}
+                        {/* end of username line  */}
+                          {/* change password line  */}
+                          <Button className='edit-button' variant="secondary" size="sm">
+                                Change Password
+                            </Button>
+                        {/* end of change password line  */}
+                        {/* delete account line  */}
                             <Button className='edit-button' variant="danger" size="sm">
                                 Delete Account
                             </Button>
-                        {/* end of fist line  */}
+                        {/* end of delete account line  */}
                     </ListGroup>
                 </div>
                 {/* end of mid column*/}
