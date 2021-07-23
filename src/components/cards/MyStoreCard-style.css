@@ -1,15 +1,3 @@
-.store-map-left{
-    border: dodgerblue dotted;
-}
-
-.store-descp-mid{
-    border: red dashed;
-}
-
-.store-img-right {
-    border: purple dotted;
-}
-
-.h4{
-    text-color:black ;
+.store-info{
+    color: rgb(37,58,179);
 }
