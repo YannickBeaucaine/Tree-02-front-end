@@ -66,7 +66,7 @@ export default function LoginForm() {
       id: Math.random().toString(36).slice(2),
       method: `${method}`
     }
-    
+
     try {
       const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
         method: 'POST',
@@ -75,6 +75,7 @@ export default function LoginForm() {
           'Content-type': 'application/json, charset=utf-8',
           'X-AppType': 'Partner',
           'Authorization': `Bearer ${token}`
+
         },
         body: JSON.stringify(body) 
       });
