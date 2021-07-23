@@ -58,10 +58,6 @@ export class MyStoreMap extends Component {
 
 export default GoogleApiWrapper({
   apiKey: ''
-<<<<<<< HEAD
-})(MyStoreMap);
-=======
 })(MyStoreMap);
      
  
->>>>>>> 802c7354793344ce8ef59aee27ddc05b2b4a84d4
