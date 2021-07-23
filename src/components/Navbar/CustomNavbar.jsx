@@ -26,10 +26,7 @@ export default function CustomNavbar() {
   const [auth, setAuth] = useContext(AuthContext);
 
   const signOut = () =>{
-    sessionStorage.removeItem('token');
-    sessionStorage.removeItem('name');
-    sessionStorage.removeItem('store_id');
-    sessionStorage.removeItem('key');
+    sessionStorage.clear();
     setAuth({
       loggedIn: false,
       name: null,

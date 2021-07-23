@@ -59,12 +59,17 @@ export default function LoginForm() {
     }
 }
 
-  const treeAPIrequest = async (method, token) => {
+  const treeAPIrequest = async (method, token, user_key) => {
     
     let body = {
       jsonrpc: '2.0',
       id: Math.random().toString(36).slice(2),
-      method: `${method}`
+      method: `${method}`,
+      params: {}
+    }
+
+    if(user_key){
+      body.params = { key: user_key }
     }
 
     try {
@@ -92,6 +97,7 @@ export default function LoginForm() {
     postLogin();
     treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key'));
     treeAPIrequest('getAdopters', sessionStorage.getItem('store_key'));
+    treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key'));
   }
 
   

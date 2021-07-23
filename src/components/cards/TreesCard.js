@@ -1,5 +1,6 @@
 import React from 'react';
 import './TreesCard-style.css';
+import MyTreesMap from '../maps/MyTreesMap';
 
 
 export const TreesCard = () => {
@@ -11,6 +12,7 @@ export const TreesCard = () => {
              {/* left column */}
              <div className='col-md-5 map-left'>
               {/* place map here  */}
+              <MyTreesMap />
                  {/* <img src= {TreesMap} alt="Map of trees location" className="card-img img-fluid md-6 tree-map" /> */}
               </div>
               {/* end of left column  */}

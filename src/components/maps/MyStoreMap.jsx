@@ -7,15 +7,13 @@ export class MyStoreMap extends Component {
 
   constructor(props) {
     super(props);
-
+    
     let data = JSON.parse(sessionStorage.getItem('getAdopters'))
     let trees = data.map((adopter) => {
     return adopter.trees
     })
     let allTrees = [...trees[0], ...trees[1]]
     sessionStorage.setItem('allTrees', JSON.stringify(allTrees))
-    
-
   }
 
   createMarkers = (trees) => {
