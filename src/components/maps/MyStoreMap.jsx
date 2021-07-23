@@ -1,28 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import './MyStoreMap-style.css'
 
-let data = JSON.parse(sessionStorage.getItem('getAdopters'))
-let trees = data.map((adopter) => {
-  return adopter.trees
-})
-let allTrees = [...trees[0], ...trees[1]]
-let allTreeLocations = allTrees.map((tree, index) => {
-  let location = [
-    tree.farmerName,
-    parseFloat(tree.lat),
-    parseFloat(tree.lon),
-    index + 1
-  ]
-  return location
-})
+export function myStoreMap() {
 
-sessionStorage.setItem('allTrees', allTreeLocations)
+  let data = JSON.parse(sessionStorage.getItem('getAdopters'))
+  let trees = data.map((adopter) => {
+    return adopter.trees
+  })
+  let allTrees = [...trees[0], ...trees[1]]
+  sessionStorage.setItem('allTrees', allTrees)
 
-export class MyStoreMap extends Component {
-
-
-  createMarkers = (trees) => {
+  let createMarkers = (trees) => {
     return trees.map(tree => (
       <Marker 
         title={tree[0]}
@@ -33,14 +22,8 @@ export class MyStoreMap extends Component {
     ));
   };
 
-  
-
-  
-
-  render() {
-    console.log(this.createMarkers(allTreeLocations));
-    return (
-      <Map
+  return (
+    <Map
         google={this.props.google}
         zoom={12}
         initialCenter={
@@ -50,18 +33,11 @@ export class MyStoreMap extends Component {
           }
         }
       >
-      {this.createMarkers(allTreeLocations)}
+      {createMarkers(allTrees)}
       </Map>
-    );
-  }
+  )
 }
 
 export default GoogleApiWrapper({
   apiKey: ''
-<<<<<<< HEAD
-})(MyStoreMap);
-=======
-})(MyStoreMap);
-     
- 
->>>>>>> 802c7354793344ce8ef59aee27ddc05b2b4a84d4
+})(myStoreMap);
