@@ -11,7 +11,7 @@ import {
   Route,
   Link,
   Redirect,
-  useHistory,
+
 } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -23,8 +23,10 @@ import Mytrees from "../pages/MyTrees";
 import Mystore from "../pages/MyStore";
 
 export default function CustomNavbar() {
-  const history = useHistory();
+ 
+
   const [auth, setAuth] = useContext(AuthContext);
+
 
   const signOut = () =>{
 
@@ -35,7 +37,8 @@ export default function CustomNavbar() {
       email: null,
       token: null
     });
-    history.push("/Home")
+
+   
   }
 
   return (
@@ -93,6 +96,7 @@ export default function CustomNavbar() {
             <Route path="/signup">
               <Signup />
             </Route>
+            
             <Route path="/adopt">
               <Adopt />
             </Route>
@@ -109,7 +113,8 @@ export default function CustomNavbar() {
             <Route path="/mystore">
               <Mystore />
             </Route>
-            )}
+          )}
+
           </Switch>
         </div>
       </Router>

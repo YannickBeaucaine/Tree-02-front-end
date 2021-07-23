@@ -1,9 +1,11 @@
 import React, { useState, useContext } from 'react';
 import { AuthContext } from '../context/AuthProvider';
 import './LoginForm-style.css'
+// rerouting to a page when logged in  1/3
 import {useHistory} from 'react-router-dom';
 
 export default function LoginForm() {
+  // rerouting to a page when logged in  2/3
   const history = useHistory();
   const [auth, setAuth] = useContext(AuthContext);
 
@@ -47,7 +49,8 @@ export default function LoginForm() {
         key: data.key,
         token: data.token
       });
-      history.push('/Mystore')
+      // rerouting to a page when logged in  3/3
+      history.push('/About')
     }
     else{
       setErrorMessage(data)
