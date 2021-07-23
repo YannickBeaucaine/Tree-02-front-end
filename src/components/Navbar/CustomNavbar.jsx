@@ -73,7 +73,7 @@ export default function CustomNavbar() {
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to={"/Mystore"}>My store</NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item href="#action/3.4" onClick={signOut}>Sign out</NavDropdown.Item>
+                      <NavDropdown.Item onClick={signOut}>Sign out</NavDropdown.Item>
                       </NavDropdown>
                     </>
                   )}
@@ -113,7 +113,7 @@ export default function CustomNavbar() {
             <Route path="/mystore">
               <Mystore />
             </Route>
-          )}
+            )}
 
           </Switch>
         </div>
