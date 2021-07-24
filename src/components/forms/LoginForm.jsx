@@ -68,8 +68,6 @@ export default function LoginForm() {
         body: JSON.stringify(body)
       });
     return await response.json();
-    
-    console.log('success')
     } catch(err) {
       error(err)
       console.log('fail')
@@ -101,16 +99,17 @@ export default function LoginForm() {
         setErrorMessage(response)
         console.log(errorMessage)
       }
-    })
-    treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
-      sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
-    })
-    treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
-      sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
-    })
-    treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
-      sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
-      history.push('/MyStore')
+    }).then(() => {
+      treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
+        sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
+      })
+      treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
+        sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
+      })
+      treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
+        sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
+        history.push('/MyStore')
+      })
     })
   }
 

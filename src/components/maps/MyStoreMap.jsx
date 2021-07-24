@@ -50,5 +50,5 @@ export class MyStoreMap extends Component {
 }
 
 export default GoogleApiWrapper({
-  apiKey: 'AIzaSyAT3JkHOQafBwyfeFWg39q-hDaUss6FLnc'
+  apiKey: ''
 })(MyStoreMap);
