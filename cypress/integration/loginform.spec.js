@@ -4,7 +4,7 @@ describe("renders the home page",() => {
     beforeEach(() => {
         cy.visit("http://localhost:3001/")
     })
-    it("render navbar", ()=>{
+    it("render navbar and test links", ()=>{
         cy.get('.navbar-brand > img').click();
         cy.get('#responsive-navbar-nav');
         cy.get('[href="/Partners"]').click();
