@@ -1,6 +1,14 @@
-
+.header-adopt-title{
+    font-weight: 800;
+    color: rgb(37,58,179);
+}
 
 .img-of-trees{
     max-width: 100%;
     height: auto;
+    margin-top: 0;
+}
+
+.adopt-section{
+    margin-bottom: 0;
 }

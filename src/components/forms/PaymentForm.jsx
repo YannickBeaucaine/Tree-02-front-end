@@ -35,20 +35,24 @@ export default function PaymentForm() {
   const quantity = paymentForm
 
   const ProductDisplay = () => (
-    <section>
+    <section className="mb-3">
       <div className="container mt-5 text-center product">
-          <div className="row adopt-section">
+          <div className="row mb-0 adopt-section">
               <div className=" col-md-12 adoption-cart">
+              
                 <form action="http://localhost:3000/purchase" method="POST">
-                <label for="quantity">How many trees would you like?</label><br />
-                <input className="mt-2 mb-2" type="number" id="quantity" name="quantity" min="1" max="100" />
+                <label for="quantity">
+                  <h2 className ="header-adopt-title">How many trees would you like?</h2>
+                  </label><br />
+                <input className="mt-2 mb-2 number-count" type="number" id="quantity" name="quantity" min="1" max="100" />
                 <br/>
+                <p>$1 Each</p>
                 <Button className="mt-2 mb-2" type="submit" variant="outline-dark" size="sm">Checkout</Button>
                 {/* <input type="submit" value="Checkout"/> */}
                 </form>
              </div>
            </div>
-           <div className="row adopt-section">
+           <div className="row mt-0 adopt-section">
               <div className=" col-md-12 ">
                 <img className="img-of-trees img-fluid" src= {tree_img} />
              </div>
@@ -69,3 +73,4 @@ export default function PaymentForm() {
       <ProductDisplay />
      );
 }
+                
