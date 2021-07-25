@@ -100,16 +100,22 @@ export default function LoginForm() {
         console.log(errorMessage)
       }
     }).then(() => {
-      treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
-        sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
-      })
-      treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
-        sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
-      })
-      treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
-        sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
-        history.push('/MyStore')
-      })
+      try {
+        treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
+          sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
+        })
+        treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
+          sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
+        })
+        treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
+          sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
+          history.push('/MyStore')
+        })
+      } catch (err) {
+        setErrorMessage(err)
+        console.log(err)
+        history.push('/Home')
+      }
     })
   }
 

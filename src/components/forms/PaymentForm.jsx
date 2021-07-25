@@ -1,29 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-const ProductDisplay = () => (
-  <section>
-    <div className="product">
-      <div className="description">
-        <h3>Purchase a tree</h3>
-        <h5>$1.00</h5>
-      </div>
-    </div>
-    <form action="http://localhost:3000/purchase" method="POST">
-      <button type="submit">
-        Checkout
-      </button>
-    </form>
-   </section>
-);
-
-const Message = ({ message }) => (
-  <section>
-    <p>{message}</p>
-  </section>
-);
-
 export default function PaymentForm() {
   const [message, setMessage] = useState("");
+
+  const [paymentForm, setPaymentForm] = useState({
+    purchase:{
+      quantity: ''
+    }
+  })
+  
+  const changeInput = e => {
+    setPaymentForm({
+      purchase:{
+        [e.target.name] : e.target.value
+      }
+    })
+  }
 
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
@@ -36,6 +28,28 @@ export default function PaymentForm() {
       setMessage("Order cancelled");
     }
   }, []);
+
+  const quantity = paymentForm
+
+  const ProductDisplay = () => (
+    <section>
+      <div className="product">
+        <h1>Adopt a tree</h1>
+      </div>
+      <form action="http://localhost:3000/purchase" method="POST">
+        <label for="quantity">How many trees would you like?</label><br />
+        <input type="number" id="quantity" name="quantity" min="1" max="100" />
+        <input type="submit" value="Checkout"/>
+      </form>
+     </section>
+  );
+
+  const Message = ({ message }) => (
+    <section>
+      <p>{message}</p>
+    </section>
+  );
+
   return message ? (
     <Message message={message} />
      ) : (
