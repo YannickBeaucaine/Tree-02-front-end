@@ -10,8 +10,7 @@ import {
   Switch,
   Route,
   Link,
-  Redirect,
-
+  Redirect
 } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
@@ -21,14 +20,15 @@ import Partners from "../pages/Partners";
 import Account from "../pages/Account";
 import Mytrees from "../pages/MyTrees";
 import Mystore from "../pages/MyStore";
+import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 export default function CustomNavbar() {
  
-
+  
   const [auth, setAuth] = useContext(AuthContext);
 
 
-  const signOut = () =>{
+  const SignOut = () =>{
 
     sessionStorage.clear();
     setAuth({
@@ -37,8 +37,7 @@ export default function CustomNavbar() {
       email: null,
       token: null
     });
-
-   
+    console.log('redirect')
   }
 
   return (
@@ -73,7 +72,7 @@ export default function CustomNavbar() {
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to={"/Mystore"}>My store</NavDropdown.Item>
                       <NavDropdown.Divider />
-                      <NavDropdown.Item onClick={signOut}>Sign out</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to={"/home"} onClick={SignOut}>Sign out</NavDropdown.Item>
                       </NavDropdown>
                     </>
                   )}

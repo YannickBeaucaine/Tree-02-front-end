@@ -3,17 +3,26 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 
 
+
 export class MyStoreMap extends Component {
 
   constructor(props) {
     super(props);
+    this.parseAdopters()
+  }
 
-    let data = JSON.parse(sessionStorage.getItem('getAdopters'))
-    let trees = data.map((adopter) => {
-    return adopter.trees
-    })
-    let allTrees = [...trees[0], ...trees[1]]
-    sessionStorage.setItem('allTrees', JSON.stringify(allTrees))
+
+  parseAdopters = () => {
+    try {
+      let data = JSON.parse(sessionStorage.getItem('getAdopters'))
+      let trees = data.map((adopter) => {
+      return adopter.trees
+      })
+      let allTrees = [...trees[0], ...trees[1]]
+      sessionStorage.setItem('allTrees', JSON.stringify(allTrees))
+      } catch(err) {
+        alert("Server took too long, press to try again")
+      }
   }
 
   createMarkers = (trees) => {
