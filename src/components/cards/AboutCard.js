@@ -19,7 +19,7 @@ export const AboutCard = () => {
                          It introduces a new level of accountability, transparency and efficiency into smallholder tree and carbon farming. 
                         </p>
                     </div>
-                    <div className='col-md-5'>
+                    <div className='col-lg-5'>
                     <img src= {T02Logo} alt="tree02 logo" className="card-img img-fluid md-6" />
                     </div>
                 </div>
