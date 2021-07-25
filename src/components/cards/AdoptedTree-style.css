@@ -1,0 +1,27 @@
+
+.adopted-tree-section{
+    background-color:rgb(77,0,122,0.6);
+    
+   
+}
+
+.adopted-tree-section{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+.adopted-tree-map-responsive{
+    border: 1px solid white;
+}
+
+.adopted-tree-right {
+    border: 1px solid white;
+}
+
+.adopted-header{
+    color: white;
+}
+.adopted-text{
+    color: white;
+}
