@@ -1,4 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import './SignupForm-style.css';
+
 
 export default function SignupForm() {
   const [signUpForm, setSignUpForm] = useState({
@@ -52,22 +54,22 @@ export default function SignupForm() {
 
   const {name, email, password, password_confirmation} = signUpForm
   return (
-    <div>
+    <div className='container text-center signup-form'>
       <form onSubmit={signUpUser}>
-        <label>Name</label><br />
+        <label className='mt-1 mb-1'>Name</label><br />
         <input type="text" value={name} onChange={changeInput} name='name'/><br />
-        <label>Email</label><br />
+        <label className='mt-1 mb-1'>Email</label><br />
         <input type="text" value={email} onChange={changeInput} name='email'/><br />
-        <label>Password</label><br />
+        <label className='mt-1 mb-1'>Password</label><br />
         <input type="password" value={password} onChange={changeInput} name='password'/><br />
-        <label>Confirm Password</label><br />
+        <label className='mt-1 mb-1'>Confirm Password</label><br />
         <input type="password" value={password_confirmation} onChange={changeInput} name='password_confirmation'/><br />
-        <label>Local store</label><br />
+        <label className='mt-1 mb-1'>Local store</label><br />
         <select name='store_id' onChange={changeInput} ><br />
            <option value="">Select...</option>
           <option value="1">The Corner Store Network</option>
         </select><br />
-        <input type="submit" value="Sign Up"/>
+        <input className='mt-2 mb-1 signup-button' type="submit" value="Sign Up"/>
       </form>
     </div>
   )
