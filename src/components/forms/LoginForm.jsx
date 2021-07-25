@@ -122,23 +122,26 @@ export default function LoginForm() {
   
   return (
     <div className="shape-div">
-    <div className="container login-form">
-        <div className='row text-center login-field'>
-          <form onSubmit={loginUser}>
-             <div className="email-field">
-                <label>Email</label><br />
-                <input className="email-input" type="text" value={loginForm.email} onChange={changeInput} name='email'/><br />
-              </div>
-              <div className="password-field">
-                <label>Password</label><br />
-                <input  className="password-input" type="password" value={loginForm.password} onChange={changeInput} name='password'/><br />
-              </div>
-              <input className="submit-button" type="submit" value="Login"/>
+        <div className="container login-form">
+            <div className='row text-center login-field'>
+              <form onSubmit={loginUser}>
+                <div className="email-field">
+                    <label>Email</label><br />
+                    <input className="email-input" type="text" value={loginForm.email} onChange={changeInput} name='email'/><br />
+                  </div>
+                  <div className="password-field">
+                    <label>Password</label><br />
+                    <input  className="password-input" type="password" value={loginForm.password} onChange={changeInput} name='password'/><br />
+                  </div>
+                  <input className="submit-button" type="submit" value="Login"/>
 
-          </form>
+              </form>
+            </div>
         </div>
-    </div>
-    <svg className='shape' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#00FFB4" fill-opacity="1" d="M0,0L130.9,160L261.8,256L392.7,288L523.6,96L654.5,32L785.5,288L916.4,224L1047.3,256L1178.2,128L1309.1,160L1440,160L1440,320L1309.1,320L1178.2,320L1047.3,320L916.4,320L785.5,320L654.5,320L523.6,320L392.7,320L261.8,320L130.9,320L0,320Z"></path></svg>
+          <svg className="home-shape" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+             
+            <path fill="#00FFB4" fill-opacity="0.8" d="M0,64L48,69.3C96,75,192,85,288,80C384,75,480,53,576,74.7C672,96,768,160,864,192C960,224,1056,224,1152,186.7C1248,149,1344,75,1392,37.3L1440,0L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
 
     </div>
   )

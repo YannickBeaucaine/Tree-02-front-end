@@ -27,6 +27,8 @@ margin: 1rem 1rem;
 
 }
 
-.shape{
+.home-shape{
 display: block;
+filter: drop-shadow(8px 4px 5px #969696);
+
 }
