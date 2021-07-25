@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PaymentForm-style.css';
 import {Button} from 'react-bootstrap';
+import tree_img from '../images/to2-with-trees.png';
 
 export default function PaymentForm() {
   const [message, setMessage] = useState("");
@@ -48,8 +49,8 @@ export default function PaymentForm() {
              </div>
            </div>
            <div className="row adopt-section">
-              <div className=" col-md-12 adoption-cart">
-            
+              <div className=" col-md-12 ">
+                <img className="img-of-trees img-fluid" src= {tree_img} />
              </div>
            </div>
       </div>
