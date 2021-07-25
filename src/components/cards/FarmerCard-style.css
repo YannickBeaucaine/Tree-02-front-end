@@ -1,0 +1,14 @@
+*{
+    color: rgb(37,58,179);
+}
+.farmer-details{
+    border: 1px solid black;
+}
+
+.farmer-picture-frame{
+    border: 1px solid black;
+}
+
+.farmer-photo{
+    border-radius: 50%;
+}
