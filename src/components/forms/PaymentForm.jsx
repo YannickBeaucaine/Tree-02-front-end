@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import './PaymentForm-style.css';
+import {Button} from 'react-bootstrap';
 
 export default function PaymentForm() {
   const [message, setMessage] = useState("");
@@ -33,14 +35,24 @@ export default function PaymentForm() {
 
   const ProductDisplay = () => (
     <section>
-      <div className="product">
-        <h1>Adopt a tree</h1>
+      <div className="container mt-5 text-center product">
+          <div className="row adopt-section">
+              <div className=" col-md-12 adoption-cart">
+                <form action="http://localhost:3000/purchase" method="POST">
+                <label for="quantity">How many trees would you like?</label><br />
+                <input className="mt-2 mb-2" type="number" id="quantity" name="quantity" min="1" max="100" />
+                <br/>
+                <Button className="mt-2 mb-2" type="submit" variant="outline-dark" size="sm">Checkout</Button>
+                {/* <input type="submit" value="Checkout"/> */}
+                </form>
+             </div>
+           </div>
+           <div className="row adopt-section">
+              <div className=" col-md-12 adoption-cart">
+            
+             </div>
+           </div>
       </div>
-      <form action="http://localhost:3000/purchase" method="POST">
-        <label for="quantity">How many trees would you like?</label><br />
-        <input type="number" id="quantity" name="quantity" min="1" max="100" />
-        <input type="submit" value="Checkout"/>
-      </form>
      </section>
   );
 
