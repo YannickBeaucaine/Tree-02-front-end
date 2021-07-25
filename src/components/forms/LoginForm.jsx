@@ -115,6 +115,7 @@ export default function LoginForm() {
 
   
   return (
+    <div className="shape-div">
     <div className="container login-form">
         <div className='row text-center login-field'>
           <form onSubmit={loginUser}>
@@ -130,6 +131,9 @@ export default function LoginForm() {
 
           </form>
         </div>
+    </div>
+    <svg className='shape' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 319"><path fill="#00FFB4" fill-opacity="1" d="M0,0L130.9,160L261.8,256L392.7,288L523.6,96L654.5,32L785.5,288L916.4,224L1047.3,256L1178.2,128L1309.1,160L1440,160L1440,320L1309.1,320L1178.2,320L1047.3,320L916.4,320L785.5,320L654.5,320L523.6,320L392.7,320L261.8,320L130.9,320L0,320Z"></path></svg>
+
     </div>
   )
 }
