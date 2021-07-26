@@ -113,18 +113,24 @@ export default function CustomNavbar() {
             <Route path="/success">
               <SuccessPage  />
             </Route>
-            {auth.loggedIn && (
             <Route path="/mystore">
               <Mystore />
             </Route>
-            
-            )}
+            {!auth.loggedIn && (
             <Route>
               <Home />
             </Route>
-
-          </Switch>
-        </div>
-      </Router>
-  )
+              )}
+              {auth.loggedIn && (
+            <Route>
+              <Mystore />
+            </Route>
+            )}
+        </Switch>
+      </div>
+    </Router>
+)
 }
+            
+            
+           
