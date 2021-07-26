@@ -35,4 +35,9 @@ svg {
 
   .please-wait {
       color: rgb(37,58,179);
+      margin-top: 9rem;
+  }
+
+  .tree-spinner{
+      margin-top: 8rem;
   }

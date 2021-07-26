@@ -5,7 +5,7 @@ export const LoadingSpinner = () => {
     return (
         <div className='container mt-2'>
             <div className='row'>
-        <div className=' col-md-12 text-center'>
+        <div className=' col-md-12 text-center tree-spinner'>
                                 <svg className='tree-loading' x="0" y="0" width="258" height="258">
                     
                                 <g clip-path="url(#clip-path)">
