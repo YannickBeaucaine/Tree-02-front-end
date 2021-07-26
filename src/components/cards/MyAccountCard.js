@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
 import { ListGroup, Button } from 'react-bootstrap';
 import './MyAccountCard-style.css'
+import { AuthContext } from '../context/AuthProvider'
 
-const MyAccountCard = () => {
+const MyAccountCard = (props) => {
+    
+    const [auth, setAuth] = useContext(AuthContext);
+
     return (
         <div className='card-container'>
         <div className='card-long'>
@@ -14,7 +19,7 @@ const MyAccountCard = () => {
                         {/* email line  */}
                         <ListGroup.Item>
                             < div className='name-left line-one'>
-                                something@gmail.com
+                            {auth.email}
                             </div>
                         </ListGroup.Item>
                             <Button className='edit-button' variant="outline-dark" size="sm">
@@ -24,7 +29,7 @@ const MyAccountCard = () => {
                           {/* username line  */}
                           <ListGroup.Item>
                             < div className='name-left line-one'>
-                                Username
+                            {auth.name}
                             </div>
                         </ListGroup.Item>
                             <Button className='edit-button' variant="outline-dark" size="sm">
