@@ -20,6 +20,8 @@ import Partners from "../pages/Partners";
 import Account from "../pages/Account";
 import Mytrees from "../pages/MyTrees";
 import Mystore from "../pages/MyStore";
+import SuccessPage from "../pages/Success";
+
 import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
 export default function CustomNavbar() {
@@ -107,6 +109,9 @@ export default function CustomNavbar() {
             </Route>
             <Route path="/mytrees">
               <Mytrees />
+            </Route>
+            <Route path="/success">
+              <SuccessPage  />
             </Route>
             {auth.loggedIn && (
             <Route path="/mystore">
