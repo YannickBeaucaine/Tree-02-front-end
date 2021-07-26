@@ -1,6 +1,6 @@
 
 
-svg {
+.tree-loading {
     display:block;
     width:258px;
     height:258px;
@@ -9,6 +9,7 @@ svg {
     top:50%;
     transform:translate(-50%,-50%);
     filter: drop-shadow(8px 4px 6px #969696);
+    margin-top: 5rem;
   }
   
   .tree {
@@ -35,9 +36,7 @@ svg {
 
   .please-wait {
       color: rgb(37,58,179);
-      margin-top: 9rem;
+      margin-top: 12rem;
   }
 
-  .tree-spinner{
-      margin-top: 8rem;
-  }
+  
