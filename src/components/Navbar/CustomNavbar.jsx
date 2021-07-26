@@ -117,7 +117,11 @@ export default function CustomNavbar() {
             <Route path="/mystore">
               <Mystore />
             </Route>
+            
             )}
+            <Route>
+              <Home />
+            </Route>
 
           </Switch>
         </div>
