@@ -1,5 +1,5 @@
 .login-form{
-    margin-top: 1rem;
+    margin-top: 0rem;
     border: 1px solidblack;
   
 }
@@ -28,7 +28,9 @@ margin: 1rem 1rem;
 }
 
 .home-shape{
-display: block;
-filter: drop-shadow(8px 4px 5px #969696);
+position: relative;
+bottom: 50px;
+z-index: -1;
+filter: drop-shadow(8px 4px 6px #969696);
 
 }

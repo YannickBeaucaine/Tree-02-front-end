@@ -2,10 +2,12 @@
     background-color:rgb(77,0,122);
     padding-top: 0;
     margin-top: 0;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
     position: relative;
-    bottom: 70px;
+    bottom: 30px;
+    box-shadow: 4px 4px 4px 2px;
+   
 }
 
 .data-title{
@@ -20,4 +22,6 @@
 
 .color-container{
     background-color:rgb(34,238,178);
+    position: relative;
+    bottom: 50px;
 }
