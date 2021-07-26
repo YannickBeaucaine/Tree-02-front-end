@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import Home from '../pages/Home';
 
 
 
@@ -41,6 +42,10 @@ export class MyStoreMap extends Component {
   };
 
   render() {
+
+    if(!sessionStorage.getItem('getAdopter')) {
+      return <Home />
+    }
     return (
       <Map
         google={this.props.google}

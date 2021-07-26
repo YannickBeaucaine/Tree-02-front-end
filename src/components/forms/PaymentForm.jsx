@@ -6,20 +6,6 @@ import tree_img from '../images/to2-with-trees.png';
 export default function PaymentForm() {
   const [message, setMessage] = useState("");
 
-  const [paymentForm, setPaymentForm] = useState({
-    purchase:{
-      quantity: ''
-    }
-  })
-  
-  const changeInput = e => {
-    setPaymentForm({
-      purchase:{
-        [e.target.name] : e.target.value
-      }
-    })
-  }
-
   useEffect(() => {
     const query = new URLSearchParams(window.location.search);
 
@@ -31,8 +17,6 @@ export default function PaymentForm() {
       setMessage("Order cancelled");
     }
   }, []);
-
-  const quantity = paymentForm
 
   const ProductDisplay = () => (
     <section className="mb-3">
@@ -47,6 +31,11 @@ export default function PaymentForm() {
                 <input className="mt-2 mb-2 number-count" type="number" id="quantity" name="quantity" min="1" max="100" />
                 <br/>
                 <p>$1 Each</p>
+                <input type="hidden" name="name" value={sessionStorage.getItem('name')} />
+                <input type="hidden" name="email" value={sessionStorage.getItem('email')} />
+                <input type="hidden" name="token" value={sessionStorage.getItem('token')} />
+                <input type="hidden" name="key" value={sessionStorage.getItem('key')} />
+                <input type="hidden" name="store_key" value={sessionStorage.getItem('store_key')} />
                 <Button className="mt-2 mb-2" type="submit" variant="outline-dark" size="sm">Checkout</Button>
                 {/* <input type="submit" value="Checkout"/> */}
                 </form>

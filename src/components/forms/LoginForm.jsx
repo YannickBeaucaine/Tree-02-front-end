@@ -39,8 +39,8 @@ export default function LoginForm() {
     if (console) {
         console.error(value)
     }
-}
-
+  }
+  
   const treeAPIrequest = async (method, token, user_key) => {
     
    

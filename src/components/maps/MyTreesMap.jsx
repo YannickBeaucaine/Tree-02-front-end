@@ -26,6 +26,21 @@ export class MyTreeMap extends Component {
   };
 
   render() {
+
+    if(!sessionStorage.getItem('getAdopter')) {
+      <Map
+      google={this.props.google}
+      zoom={12}
+      initialCenter={
+        {
+          lat: "-8.6263352",
+          lng: "126.6795575"
+        }
+      }
+    />
+    }
+
+
     return (
       <Map
         google={this.props.google}

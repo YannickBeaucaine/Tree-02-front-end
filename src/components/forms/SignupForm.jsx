@@ -15,7 +15,6 @@ export default function SignupForm() {
   const [errorMessage, setErrorMessage] = useState('')
 
   const changeInput = e => {
-    console.log(e.target.value)
     setSignUpForm({
       user:{
         ...signUpForm.user,
