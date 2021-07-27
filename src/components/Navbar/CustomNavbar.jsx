@@ -72,8 +72,11 @@ export default function CustomNavbar(props) {
                   {auth.loggedIn && (
                     <>
                       <Navbar.Text>
-                        Signed in as: <h5 className="user-name" >{auth.name}</h5>
+                        
+                        Signed in as: <h8 className="user-name" >{auth.name}</h8>
+                      
                       </Navbar.Text>
+                      
                       <NavDropdown title="My Account" id="collasible-nav-dropdown">
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
                       <NavDropdown.Item as={Link} to={"/Mystore"}>My store</NavDropdown.Item>
@@ -91,6 +94,7 @@ export default function CustomNavbar(props) {
         {/* react router functions   */}
         <div>
           <Switch>
+            {/* public routes   */}
             <Route exact path="/" component={() => (<Redirect to='/home' />)} />
             <Route path="/home">
               <Home />
@@ -101,12 +105,12 @@ export default function CustomNavbar(props) {
             <Route path="/signup">
               <Signup />
             </Route>
-            
+            <Route path="/partners">
+              <Partners />
+            </Route>
+            {/* private routes  */}
             <PrivateRoute path="/adopt">
               <Adopt />
-            </PrivateRoute>
-            <PrivateRoute path="/partners">
-              <Partners />
             </PrivateRoute>
             <PrivateRoute path="/account">
               <Account />
@@ -126,5 +130,6 @@ export default function CustomNavbar(props) {
   )
 }
             
+         
             
            
