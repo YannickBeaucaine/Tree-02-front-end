@@ -76,7 +76,7 @@ const MyAccountCard = (props) => {
                                 {isEdit?"Cancel":"Edit"}
                             </Button>
                 {/* mid column */}
-                <div className='col-md-12'>
+                <div className='col-md-12 py-2'>
                     <ListGroup variant="flush">
                         {/* email line  */}
                         {isEdit?<>
