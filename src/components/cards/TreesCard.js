@@ -25,8 +25,14 @@ export const TreesCard = () => {
               </div>
               {/* end of right column */}
           </div>
+          
       </div>
+     {/* insert wave here   */}
+ 
+
+
   </div>
+      
     );
   }
              

@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 import './Header-style.css';
 import TreesCard from '../cards/TreesCard';
+import GreenWave from '../sections/GreenWave';
 import { AuthContext } from '../context/AuthProvider'
+import GreenSection from '../sections/GreenSection';
 
 
 export default function MyTrees() {
@@ -26,6 +28,8 @@ export default function MyTrees() {
                 </div>
             </div>
             <TreesCard />
+            <GreenWave />
+            <GreenSection/>
         </div>
     )
 }
