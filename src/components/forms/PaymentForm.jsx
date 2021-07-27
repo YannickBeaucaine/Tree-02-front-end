@@ -24,7 +24,7 @@ export default function PaymentForm() {
           <div className="row mb-0 adopt-section">
               <div className=" col-md-12 adoption-cart">
               
-                <form action="http://localhost:3000/purchase" method="POST">
+                <form action= {process.env.REACT_APP_BACKEND_URL + "/purchase"} method="POST">
                 <label for="quantity">
                   <h2 className ="header-adopt-title">How many trees would you like?</h2>
                   </label><br />
