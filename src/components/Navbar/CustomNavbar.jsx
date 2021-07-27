@@ -24,7 +24,7 @@ import SuccessPage from "../pages/Success";
 
 import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider';
 
-export default function CustomNavbar() {
+export default function CustomNavbar(props) {
  
   
   const [auth, setAuth] = useContext(AuthContext);
@@ -68,7 +68,7 @@ export default function CustomNavbar() {
                   {auth.loggedIn && (
                     <>
                       <Navbar.Text>
-                        Signed in as: <a href="#login">{auth.name}</a>
+                        Signed in as: <h7 className="user-name" >{auth.name}</h7>
                       </Navbar.Text>
                       <NavDropdown title="My Account" id="collasible-nav-dropdown">
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
@@ -113,14 +113,24 @@ export default function CustomNavbar() {
             <Route path="/success">
               <SuccessPage  />
             </Route>
-            {auth.loggedIn && (
             <Route path="/mystore">
               <Mystore />
             </Route>
+            {!auth.loggedIn && (
+            <Route>
+              <Home />
+            </Route>
+              )}
+              {auth.loggedIn && (
+            <Route>
+              <Mystore />
+            </Route>
             )}
-
-          </Switch>
-        </div>
-      </Router>
-  )
+        </Switch>
+      </div>
+    </Router>
+)
 }
+            
+            
+           

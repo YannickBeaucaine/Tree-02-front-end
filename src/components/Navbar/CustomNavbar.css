@@ -1,3 +1,8 @@
 .bg-navbarColor{
     background-color: rgb(37, 58, 179);
 }
+
+.user-name{
+    color: white;
+    text-decoration: none;
+}
