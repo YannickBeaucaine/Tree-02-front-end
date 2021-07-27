@@ -1,7 +1,7 @@
 import React from 'react';
 import './MyStoreCard-style.css';
 import StoreImgCard from './StoreImgCard';
-import CornerStoreImg from '../images/stores/corner-store.jpg';
+import CornerStoreImg from '../Images/stores/corner-store.jpg';
 import { Link } from 'react-router-dom';
 import MyStoreMap from '../maps/MyStoreMap'
 

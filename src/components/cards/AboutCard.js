@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './AboutCard-style.css'
-import T02Logo from '../images/t02greenfull.png'
+import T02Logo from '../Images/t02greenfull.png'
 
 
 export const AboutCard = () => {

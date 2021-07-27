@@ -4,10 +4,10 @@ import './StatsSection-style.css'
 
 // images import 
 import DataCard from '../cards/DataCard'
-import TreeImg from '../images/statsicons/trees-icon.png';
-import FarmImg from '../images/statsicons/farmer-icon.png';
-import MoneyImg from '../images/statsicons/money-tree-icon.png';
-import CloudImg from '../images/statsicons/cloud-download-icon.png';
+import TreeImg from '../Images/statsicons/trees-icon.png';
+import FarmImg from '../Images/statsicons/farmer-icon.png';
+import MoneyImg from '../Images/statsicons/money-tree-icon.png';
+import CloudImg from '../Images/statsicons/cloud-download-icon.png';
 
 
 const StatsSection = ({data}) => {

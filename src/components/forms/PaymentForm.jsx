@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './PaymentForm-style.css';
 import {Button} from 'react-bootstrap';
-import tree_img from '../images/to2-with-trees.png';
+import tree_img from '../Images/to2-with-trees.png';
 
 export default function PaymentForm() {
   const [message, setMessage] = useState("");

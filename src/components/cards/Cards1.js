@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Card1 from './Card1';
-import img1 from '../images/partners/corner-logo.png';
-import img2 from '../images/partners/etiko-logo.png';
-import img3 from '../images/partners/oneseed-logo.png';
-import img4 from '../images/partners/onesp-logo.png';
-import img5 from '../images/partners/showroom-logo.png';
+import img1 from '../Images/partners/corner-logo.png';
+import img2 from '../Images/partners/etiko-logo.png';
+import img3 from '../Images/partners/oneseed-logo.png';
+import img4 from '../Images/partners/onesp-logo.png';
+import img5 from '../Images/partners/showroom-logo.png';
 
 export default class Cards1 extends Component {
     render() {

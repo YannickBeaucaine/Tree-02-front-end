@@ -1,5 +1,5 @@
 import React, {useContext} from 'react';
-import NavbarLogo from '../images/t02greensm.png';
+import NavbarLogo from '../Images/t02greensm.png';
 import './CustomNavbar.css';
 import { AuthContext } from '../context/AuthProvider'
 // Bootstrap
