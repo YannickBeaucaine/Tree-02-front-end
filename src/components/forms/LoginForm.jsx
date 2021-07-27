@@ -8,13 +8,8 @@ export default function LoginForm() {
   // rerouting to a page when logged in  2/3
   const history = useHistory();
   const [auth, setAuth] = useContext(AuthContext);
-
-  const [loginForm, setLoginForm] = useState({
-      email: '',
-      password: ''
-  });
-
   const [errorMessage, setErrorMessage] = useState('');
+  const [loginForm, setLoginForm] = useState({ email: '', password: '' });
 
   const changeInput = e => {
     setLoginForm({
@@ -23,8 +18,13 @@ export default function LoginForm() {
     })
   }
 
+  function error(value) {
+    if (console) {
+        console.error(value)
+    }
+  }
+
   const postLogin = async () => {
-    
     const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/login`, {
       method: 'POST',
       headers: {
@@ -34,27 +34,17 @@ export default function LoginForm() {
     })
     return await response.json();
   }
-
-  function error(value) {
-    if (console) {
-        console.error(value)
-    }
-  }
   
   const treeAPIrequest = async (method, token, user_key) => {
-    
-   
     let body = {
       jsonrpc: '2.0',
       id: Math.random().toString(36).slice(2),
       method: `${method}`,
       params: {}
     }
-
     if(user_key){
       body.params = { key: user_key }
     }
-
     try {
       const response = await fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
         method: 'POST',
@@ -72,7 +62,6 @@ export default function LoginForm() {
       error(err)
       console.log('fail')
     }
-    
   }
 
   const loginUser = e => {
@@ -92,37 +81,29 @@ export default function LoginForm() {
           key: response.key,
           token: response.token
         });
-        // rerouting to a page when logged in  3/3
-  
       }
       else{
         setErrorMessage(response)
-        console.log(errorMessage)
-        history.push('/Home')
-      }
-    }).then(() => {
-      try {
-        treeAPIrequest('getAdopters', sessionStorage.getItem('store_key')).then((response) => {
-          sessionStorage.setItem('getAdopters', JSON.stringify(response.result));
-        })
-        treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key')).then((response) => {
-          sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));
-        })
-        treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key')).then((response) => {
-          sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
-          if(sessionStorage.getItem('getAdopter') === null) {
-            sessionStorage.clear()
-            history.push('/Home');
-          } else {
-            history.push('/MyStore')
-          }
-        })
-      } catch (err) {
-        setErrorMessage(err)
-        console.log(err)
         history.push('/Home')
       }
     })
+    .then(() => {
+        treeAPIrequest('getAdopters', sessionStorage.getItem('store_key'))
+        .then((response) => {sessionStorage.setItem('getAdopters', JSON.stringify(response.result));})
+        treeAPIrequest('getCurrentPartner', sessionStorage.getItem('store_key'))
+        .then((response) => {sessionStorage.setItem('getCurrentPartner', JSON.stringify(response.result));})
+        treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key'))
+        .then((response) => {
+          sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
+          history.push('/MyStore')
+        })
+        .catch((err) => {
+          console.log(err)
+          history.push('/Home')
+        }
+        )
+      }
+    )
   }
 
   

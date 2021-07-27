@@ -18,12 +18,9 @@ export const TreesCard = () => {
               {/* end of left column  */}
               {/* right column  */}
               <div className='col-md-7 cust-stats-right'>
-                  <h1 className="card-title mt-2 text-center">Thank You "username"</h1>
+                  <h1 className="card-title mt-2 text-center">Thanks {sessionStorage.getItem('name')}!</h1>
                     <p className="card-content text-center">
-                    You have adopted "" trees-----------     
-                    Your carbon impact------------------
-                    Number 3----------------------------
-                    Number 4----------------------------
+                    You have adopted {sessionStorage.getItem('name').length} trees    
                     </p>
               </div>
               {/* end of right column */}

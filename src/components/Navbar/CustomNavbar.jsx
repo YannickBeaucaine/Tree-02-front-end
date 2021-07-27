@@ -23,21 +23,27 @@ import Mystore from "../pages/MyStore";
 import SuccessPage from "../pages/Success";
 
 export default function CustomNavbar(props) {
- 
-  
-  const [auth, setAuth] = useContext(AuthContext);
 
+  const [auth, setAuth] = useContext(AuthContext);
 
   const SignOut = () =>{
 
     sessionStorage.clear();
     setAuth({
       loggedIn: false,
-      name: null,
-      email: null,
-      token: null
     });
     console.log('redirect')
+  }
+
+  function PrivateRoute ({ children, ...rest }) {
+    return (
+      <Route {...rest} render={() => {
+        console.log(sessionStorage.getItem('token'))
+        return sessionStorage.getItem('token') === null
+        ?  <Redirect to='/home' />
+        : children
+      }} />
+    )
   }
 
   return (
@@ -96,38 +102,28 @@ export default function CustomNavbar(props) {
               <Signup />
             </Route>
             
-            <Route path="/adopt">
+            <PrivateRoute path="/adopt">
               <Adopt />
-            </Route>
-            <Route path="/partners">
+            </PrivateRoute>
+            <PrivateRoute path="/partners">
               <Partners />
-            </Route>
-            <Route path="/account">
+            </PrivateRoute>
+            <PrivateRoute path="/account">
               <Account />
-            </Route>
-            <Route path="/mytrees">
+            </PrivateRoute>
+            <PrivateRoute path="/mytrees">
               <Mytrees />
-            </Route>
-            <Route path="/success">
+            </PrivateRoute>
+            <PrivateRoute path="/success">
               <SuccessPage  />
-            </Route>
-            <Route path="/mystore">
+            </PrivateRoute>
+            <PrivateRoute path="/mystore">
               <Mystore />
-            </Route>
-            {!auth.loggedIn && (
-            <Route>
-              <Home />
-            </Route>
-              )}
-              {auth.loggedIn && (
-            <Route>
-              <Mystore />
-            </Route>
-            )}
+            </PrivateRoute>
         </Switch>
       </div>
     </Router>
-)
+  )
 }
             
             

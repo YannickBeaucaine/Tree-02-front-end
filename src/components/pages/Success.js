@@ -16,6 +16,7 @@ export default class SuccessPage extends Component {
     }
 
     componentDidMount() {
+        
         let query = queryString.parse(window.location.search)
         let trees = query.trees
         let store_key = sessionStorage.getItem('store_key')
@@ -48,20 +49,16 @@ export default class SuccessPage extends Component {
         .then(json => {
             sessionStorage.setItem('getAdopter', JSON.stringify(json.result.trees)
             )}
-        ).then( )
+        )
 
     }
 
 
     render() {
-
         const isLoaded = this.state
-
         if (isLoaded) {
             return <Mytrees />
         }
-
-
         return (
             <div>
             <div className="header">
