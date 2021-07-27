@@ -27,8 +27,6 @@ export default function Home() {
               });
 
               const data = await response.json();
-              console.log('Data')
-              console.log(data)
               setData(data.result)
               sessionStorage.setItem('getDashboardStats', JSON.stringify(data.result));
 

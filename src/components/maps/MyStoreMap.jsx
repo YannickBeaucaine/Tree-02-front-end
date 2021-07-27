@@ -1,17 +1,10 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import Home from '../pages/Home';
 
 
 
 
 export class MyStoreMap extends Component {
-
-  constructor(props) {
-    super(props);
-    this.parseAdopters()
-  }
-
 
   parseAdopters = () => {
     try {
@@ -22,29 +15,42 @@ export class MyStoreMap extends Component {
       let allTrees = [...trees[0], ...trees[1]]
       sessionStorage.setItem('allTrees', JSON.stringify(allTrees))
       } catch(err) {
-        alert("Server took too long, press to try again")
+        console.log(err)
       }
   }
 
   createMarkers = (trees) => {
-    return trees.map(tree => (
-      <Marker 
-        title={tree.farmerName}
-        position={{lat: tree.lat, lng: tree.lon}}
-        key={tree.treeID}
-        icon={{
-          url: '/maptree2.png',
-      
-        }}
-      >
-      </Marker>
-    ));
+    if(trees) {
+      return trees.map(tree => (
+        <Marker 
+          title={tree.farmerName}
+          position={{lat: tree.lat, lng: tree.lon}}
+          key={tree.treeID}
+          icon={{
+            url: '/maptree2.png',
+        
+          }}
+        >
+        </Marker>
+      ));
+    }
   };
 
   render() {
 
+    this.parseAdopters()
+
     if(!sessionStorage.getItem('getAdopter')) {
-      return <Home />
+      return <Map
+      google={this.props.google}
+      zoom={12}
+      initialCenter={
+        {
+          lat: "-8.6263352",
+          lng: "126.6795575"
+        }
+      }
+    />
     }
     return (
       <Map
@@ -52,8 +58,8 @@ export class MyStoreMap extends Component {
         zoom={12}
         initialCenter={
           {
-            lat: JSON.parse(sessionStorage.getItem('allTrees'))[0].lat,
-            lng: JSON.parse(sessionStorage.getItem('allTrees'))[0].lon
+            lat: "-8.6263352",
+            lng: "126.6795575"
           }
         }
       >

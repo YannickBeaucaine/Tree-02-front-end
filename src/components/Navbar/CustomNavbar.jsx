@@ -45,7 +45,7 @@ export default function CustomNavbar(props) {
         <div>
           <Navbar collapseOnSelect expand="lg" bg="navbarColor" variant="dark">
             <Container>
-              <Navbar.Brand as={Link} to={"/Home"}>
+              <Navbar.Brand as={Link} to={auth.loggedIn ? "/MyStore" : "/Home"}>
                 <img src={NavbarLogo} alt="Tree 02 logo" width="78px" /> </Navbar.Brand>
               <Navbar.Toggle aria-controls="responsive-navbar-nav" />
               <Navbar.Collapse id="responsive-navbar-nav">
@@ -66,7 +66,7 @@ export default function CustomNavbar(props) {
                   {auth.loggedIn && (
                     <>
                       <Navbar.Text>
-                        Signed in as: <h7 className="user-name" >{auth.name}</h7>
+                        Signed in as: <h5 className="user-name" >{auth.name}</h5>
                       </Navbar.Text>
                       <NavDropdown title="My Account" id="collasible-nav-dropdown">
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>

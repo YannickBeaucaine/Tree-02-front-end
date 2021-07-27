@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import './SignupForm-style.css';
+import {useHistory} from 'react-router-dom';
 
 
 export default function SignupForm() {
+  const history = useHistory();
   const [signUpForm, setSignUpForm] = useState({
     user:{
       name: '',
@@ -49,6 +51,7 @@ export default function SignupForm() {
   const signUpUser = e => {
     e.preventDefault()
     postSignUp()
+    history.push('/')
   }
 
   const {name, email, password, password_confirmation} = signUpForm
@@ -64,7 +67,7 @@ export default function SignupForm() {
         <label className='mt-1 mb-1'>Confirm Password</label><br />
         <input type="password" value={password_confirmation} onChange={changeInput} name='password_confirmation'/><br />
         <label className='mt-1 mb-1'>Local store</label><br />
-        <select name='store_id' onChange={changeInput} ><br />
+        <select name='store_id' onChange={changeInput} >
            <option value="">Select...</option>
           <option value="1">The Corner Store Network</option>
         </select><br />
