@@ -68,7 +68,7 @@ export default function CustomNavbar(props) {
                   {auth.loggedIn && (
                     <>
                       <Navbar.Text>
-                        Signed in as: <a className="user-name">{auth.name}</a>
+                        Signed in as: <h7 className="user-name" >{auth.name}</h7>
                       </Navbar.Text>
                       <NavDropdown title="My Account" id="collasible-nav-dropdown">
                       <NavDropdown.Item as={Link} to={"/Account"}>Account settings</NavDropdown.Item>
