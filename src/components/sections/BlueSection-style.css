@@ -1,20 +1,19 @@
-.green-section{
-    background-color:rgb(37,242,182);
+.blue-section{
+    background-color:rgb(66,83,180);
     position: relative;
-    bottom: 50px;
-    height: 5vh;
+    bottom: 100px;
+    height: 20vh;
     padding-bottom: 0px;
     margin-bottom: 0px;
 }
 
 
-
 @media only screen and (max-width: 600px) {
-    .green-section{
-        background-color:rgb(37,242,182);
+    .blue-section{
+        background-color:rgb(66,83,180);
         position: relative;
-        bottom: 51px;
-        height: 18vh;
+        bottom: 100px;
+        height: 39vh;
         padding-bottom: 0px;
         margin-bottom: 0px;
     }

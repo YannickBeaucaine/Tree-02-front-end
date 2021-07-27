@@ -1,0 +1,9 @@
+.blue-wave{
+    position: relative;
+    bottom: 99px;
+    z-index: -1;
+    filter: drop-shadow(8px 4px 6px #969696);
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    
+    }
