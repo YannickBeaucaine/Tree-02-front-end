@@ -2,7 +2,7 @@ import React from 'react';
 import AuthProvider from './components/context/AuthProvider';
 //Bootstrap Components
 import Footer from './components/Footer/Footer';
-import Navbar from './components/navbar/CustomNavbar';
+import Navbar from './components/Navbar/CustomNavbar';
 
 
 function App() {
