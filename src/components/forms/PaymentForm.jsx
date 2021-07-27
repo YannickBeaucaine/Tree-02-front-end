@@ -43,7 +43,7 @@ export default function PaymentForm() {
            </div>
            <div className="row mt-0 adopt-section">
               <div className=" col-md-12 ">
-                <img className="img-of-trees img-fluid" src= {tree_img} alt="image of trees"/>
+                <img className="img-of-trees img-fluid" src= {tree_img} alt="trees"/>
              </div>
            </div>
       </div>
