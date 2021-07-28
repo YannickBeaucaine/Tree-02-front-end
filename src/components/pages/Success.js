@@ -3,7 +3,6 @@ import './Header-style.css';
 import LoadingSpinner from '../cards/LoadingSpinner'
 import './Success-style.css';
 import queryString from 'query-string';
-import Mytrees from './MyTrees';
 import  { Redirect } from 'react-router-dom'
 
 
@@ -16,7 +15,7 @@ export default class SuccessPage extends Component {
         }
     }
 
-    componentDidMount(history) {
+    componentDidMount() {
         if(!this.state.isLoaded) {
             console.log('start treeo2 call')
             let query = queryString.parse(window.location.search)
@@ -49,12 +48,11 @@ export default class SuccessPage extends Component {
                 })
             .then(res => res.json())
             .then(json => {
-                sessionStorage.setItem('getAdopter', JSON.stringify(json.result.trees))
-                this.state.isLoaded = true
+                sessionStorage.setItem('getAdopter', JSON.stringify(json.result))
             }
             )
-            console.log('force update?')
-            this.state.isLoaded = true
+        console.log('force update?')
+        this.setState({loggedIn: true})
         this.forceUpdate()
         }
     }
@@ -63,7 +61,7 @@ export default class SuccessPage extends Component {
     render() {
         if(this.state.isLoaded) {
             console.log('redirect?')
-            return <Redirect to='/mytrees'/>
+            return <Redirect to='/about'/>
         }
         return (
             <div>

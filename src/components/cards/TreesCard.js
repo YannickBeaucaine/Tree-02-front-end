@@ -1,32 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './TreesCard-style.css';
 import MyTreesMap from '../maps/MyTreesMap';
-import { AuthContext } from '../context/AuthProvider'
 
 
 export const TreesCard = () => {
 
-  // const [auth, setAuth] = useContext(AuthContext);
-
-  //   if(!auth.loggedIn && sessionStorage.getItem('token')){
-  //       setAuth({
-  //           loggedIn: true,
-  //           name: sessionStorage.getItem('name'),
-  //           email: sessionStorage.getItem('email'),
-  //           token: sessionStorage.getItem('token'),
-  //           key: sessionStorage.getItem('key')
-  //       })
-  //   }
-  const [numberOfTrees, setNumberOfTrees] = useState(JSON.parse(sessionStorage.getItem('getAdopter')).trees.length)
-  // try {
-  //       let data = JSON.parse(sessionStorage.getItem('getAdopter'))
-  //       sessionStorage.setItem('adopterTrees', JSON.stringify(data.trees))
-  //       let numberOfTrees = data.trees.length
-  //       sessionStorage.setItem('numberOfTrees', numberOfTrees)
-  //       } catch {
-  //         sessionStorage.setItem('adopterTrees', [])
-  //         sessionStorage.setItem('numberOfTrees', 0)
-  //       }
+  try {
+    const numberOfTrees = JSON.parse(sessionStorage.getItem('getAdopter')).trees.length
+    sessionStorage.setItem('numberOfTrees', numberOfTrees)
+  } catch{
+    const numberOfTrees = 0
+    sessionStorage.setItem('numberOfTrees', numberOfTrees)
+  }
+  
 
     return (
 
@@ -44,7 +30,7 @@ export const TreesCard = () => {
               <div className='col-lg-5 '>
                   <h1 className="card-title  text-center cust-name " style={{ width: '20rem' }}>Thanks <br/>{sessionStorage.getItem('name')}!</h1>
                     <h4 className="card-content text-center" style={{ width: '20rem' }}>
-                    You have adopted {numberOfTrees} trees    
+                    You have adopted {sessionStorage.numberOfTrees} trees    
                     </h4>
               </div>
               {/* end of right column */}

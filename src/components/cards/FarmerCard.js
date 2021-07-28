@@ -3,12 +3,13 @@ import './FarmerCard-style.css';
 
 export const FarmerCard = () => {
 
+
+    const tree = useMemo(() => {
+        const trees = JSON.parse(sessionStorage.getItem('getAdopter')).trees;
+       const index = Math.floor(Math.random() * trees.length);
+       return trees[index];
+    },[])
   
-  const tree = useMemo(() => {
-    const trees = JSON.parse(sessionStorage.getItem('getAdopter')).trees;
-    const index = Math.floor(Math.random() * trees.length);
-    return trees[index];
-  },[])
 
     return (
         <div className='card-container py-4'>

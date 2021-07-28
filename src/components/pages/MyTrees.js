@@ -21,6 +21,14 @@ export default function MyTrees() {
         })
     }
 
+    if (sessionStorage.getAdopter === 'null') {
+        sessionStorage.setItem('numberofTrees', 0)
+    } else {
+        const numberOfTrees = JSON.parse(sessionStorage.getItem('getAdopter')).trees.length
+        sessionStorage.setItem('numberofTrees', numberOfTrees)
+    }
+    
+
     return (
         <div>
             <div className="header">
