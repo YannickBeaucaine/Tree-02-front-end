@@ -44,8 +44,11 @@ export const TreesCard = () => {
               <div className='col-lg-5 '>
                   <h1 className="card-title  text-center cust-name " style={{ width: '20rem' }}>Thanks <br/>{sessionStorage.getItem('name')}!</h1>
                     <h4 className="card-content text-center" style={{ width: '20rem' }}>
-                    You have adopted {numberOfTrees} trees    
+                    You have adopted {numberOfTrees} trees <br/><br/>
+                    Meet the farmers
                     </h4>
+                    
+                  
               </div>
               {/* end of right column */}
           </div>
