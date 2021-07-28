@@ -25,7 +25,7 @@ export const FarmerCard = () => {
               {/* right column  */}
               <div className='col-md-5 farmer-picture-frame'>
                 {/* place picture here  */}
-                <img src="" alt="farmer" className="card-img-center farmer-photo" />
+                <img src={tree.farmerPhotoURL} alt="farmer" className="card-img-center farmer-photo" />
                 
               </div>
               {/* end of right column */}
