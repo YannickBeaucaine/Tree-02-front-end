@@ -32,6 +32,8 @@ export const TreesCard = () => {
                     <h4 className="card-content text-center" style={{ width: '20rem' }}>
                     You have adopted {sessionStorage.numberOfTrees} trees    
                     </h4>
+                    
+                  
               </div>
               {/* end of right column */}
           </div>

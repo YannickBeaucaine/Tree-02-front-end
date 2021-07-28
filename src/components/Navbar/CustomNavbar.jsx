@@ -72,7 +72,7 @@ export default function CustomNavbar(props) {
                     <>
                       <Navbar.Text>
                         
-                        Signed in as: <h5 className="user-name" >{auth.name}</h5>
+                        Signed in as: <h7 className="user-name" >{auth.name}</h7>
                       
                       </Navbar.Text>
                       
