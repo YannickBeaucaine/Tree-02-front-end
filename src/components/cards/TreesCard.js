@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import './TreesCard-style.css';
 import MyTreesMap from '../maps/MyTreesMap';
 import { AuthContext } from '../context/AuthProvider'
@@ -17,16 +17,16 @@ export const TreesCard = () => {
   //           key: sessionStorage.getItem('key')
   //       })
   //   }
-
-  try {
-        let data = JSON.parse(sessionStorage.getItem('getAdopter'))
-        sessionStorage.setItem('adopterTrees', JSON.stringify(data.trees))
-        let numberOfTrees = data.trees.length
-        sessionStorage.setItem('numberOfTrees', numberOfTrees)
-        } catch {
-          sessionStorage.setItem('adopterTrees', [])
-          sessionStorage.setItem('numberOfTrees', 0)
-        }
+  const [numberOfTrees, setNumberOfTrees] = useState(JSON.parse(sessionStorage.getItem('getAdopter')).trees.length)
+  // try {
+  //       let data = JSON.parse(sessionStorage.getItem('getAdopter'))
+  //       sessionStorage.setItem('adopterTrees', JSON.stringify(data.trees))
+  //       let numberOfTrees = data.trees.length
+  //       sessionStorage.setItem('numberOfTrees', numberOfTrees)
+  //       } catch {
+  //         sessionStorage.setItem('adopterTrees', [])
+  //         sessionStorage.setItem('numberOfTrees', 0)
+  //       }
 
     return (
 
@@ -44,7 +44,7 @@ export const TreesCard = () => {
               <div className='col-lg-5 '>
                   <h1 className="card-title  text-center cust-name " style={{ width: '20rem' }}>Thanks <br/>{sessionStorage.getItem('name')}!</h1>
                     <h4 className="card-content text-center" style={{ width: '20rem' }}>
-                    You have adopted {sessionStorage.getItem('numberOfTrees')} trees    
+                    You have adopted {numberOfTrees} trees    
                     </h4>
               </div>
               {/* end of right column */}

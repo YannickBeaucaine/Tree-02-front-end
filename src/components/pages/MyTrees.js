@@ -4,6 +4,7 @@ import TreesCard from '../cards/TreesCard';
 import GreenWave from '../sections/GreenWave';
 import { AuthContext } from '../context/AuthProvider'
 import GreenSection from '../sections/GreenSection';
+import FarmerCard from '../cards/FarmerCard';
 
 
 export default function MyTrees() {
@@ -28,6 +29,7 @@ export default function MyTrees() {
                 </div>
             </div>
             <TreesCard />
+            <FarmerCard />
             <GreenWave />
             <GreenSection/>
         </div>
