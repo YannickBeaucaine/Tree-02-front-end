@@ -28,7 +28,6 @@ export default function CustomNavbar(props) {
 
   const SignOut = () =>{
 
-    sessionStorage.clear();
     setAuth({
       loggedIn: false,
     });
@@ -38,7 +37,6 @@ export default function CustomNavbar(props) {
   function PrivateRoute ({ children, ...rest }) {
     return (
       <Route {...rest} render={() => {
-        console.log(sessionStorage.getItem('token'))
         return sessionStorage.getItem('token') === null
         ?  <Redirect to='/home' />
         : children
@@ -73,7 +71,7 @@ export default function CustomNavbar(props) {
                     <>
                       <Navbar.Text>
                         
-                        Signed in as: <h8 className="user-name" >{auth.name}</h8>
+                        Signed in as: <h5 className="user-name" >{auth.name}</h5>
                       
                       </Navbar.Text>
                       

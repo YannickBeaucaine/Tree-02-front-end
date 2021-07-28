@@ -4,6 +4,7 @@ import LoadingSpinner from '../cards/LoadingSpinner'
 import './Success-style.css';
 import queryString from 'query-string';
 import Mytrees from './MyTrees';
+import  { Redirect } from 'react-router-dom'
 
 
 export default class SuccessPage extends Component {
@@ -15,49 +16,54 @@ export default class SuccessPage extends Component {
         }
     }
 
-    componentDidMount() {
-        
-        let query = queryString.parse(window.location.search)
-        let trees = query.trees
-        let store_key = sessionStorage.getItem('store_key')
+    componentDidMount(history) {
+        if(!this.state.isLoaded) {
+            console.log('start treeo2 call')
+            let query = queryString.parse(window.location.search)
+            let trees = query.trees
+            let store_key = sessionStorage.getItem('store_key')
 
-        let body = {
-            jsonrpc: '2.0',
-            id: Math.random().toString(36).slice(2),
-            method: 'adoptTrees',
-            params: {
-                adopter: {
-                    name: sessionStorage.getItem('name'),
-                    key: sessionStorage.getItem('key'),
-                    email: sessionStorage.getItem('email')
-                },
-                trees: trees
+            let body = {
+                jsonrpc: '2.0',
+                id: Math.random().toString(36).slice(2),
+                method: 'adoptTrees',
+                params: {
+                    adopter: {
+                        name: sessionStorage.getItem('name'),
+                        key: sessionStorage.getItem('key'),
+                        email: sessionStorage.getItem('email')
+                    },
+                    trees: trees
+                }
             }
-          }
-        fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-type': 'application/json, charset=utf-8',
-                'X-AppType': 'Partner',
-                'Authorization': `Bearer ${store_key}`
+            fetch('https://cors-anywhere.herokuapp.com/https://api.test.treeo2.org/rpc', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-type': 'application/json, charset=utf-8',
+                    'X-AppType': 'Partner',
+                    'Authorization': `Bearer ${store_key}`
 
-            },
-            body: JSON.stringify(body)
-            })
-        .then(res => res.json())
-        .then(json => {
-            sessionStorage.setItem('getAdopter', JSON.stringify(json.result.trees)
-            )}
-        )
-
+                },
+                body: JSON.stringify(body)
+                })
+            .then(res => res.json())
+            .then(json => {
+                sessionStorage.setItem('getAdopter', JSON.stringify(json.result.trees))
+                this.state.isLoaded = true
+            }
+            )
+            console.log('force update?')
+            this.state.isLoaded = true
+        this.forceUpdate()
+        }
     }
 
 
     render() {
-        const isLoaded = this.state
-        if (isLoaded) {
-            return <Mytrees />
+        if(this.state.isLoaded) {
+            console.log('redirect?')
+            return <Redirect to='/mytrees'/>
         }
         return (
             <div>

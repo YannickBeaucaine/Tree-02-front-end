@@ -33,12 +33,3 @@ export default function MyTrees() {
         </div>
     )
 }
-
-
-// export default class Mytrees extends Component {
-//     render() {
-//         return (
-            
-//         )
-//     }
-// }

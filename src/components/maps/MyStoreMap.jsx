@@ -12,7 +12,7 @@ export class MyStoreMap extends Component {
       let trees = data.map((adopter) => {
       return adopter.trees
       })
-      let allTrees = [...trees[0], ...trees[1]]
+      let allTrees = [...trees[0], ...trees[1], ...trees[2]]
       sessionStorage.setItem('allTrees', JSON.stringify(allTrees))
       } catch(err) {
         console.log(err)

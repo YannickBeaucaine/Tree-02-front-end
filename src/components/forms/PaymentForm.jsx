@@ -25,7 +25,7 @@ export default function PaymentForm() {
               <div className=" col-md-12 adoption-cart">
               
                 <form action= {process.env.REACT_APP_BACKEND_URL + "/purchase"} method="POST">
-                <label for="quantity">
+                <label>
                   <h2 className ="header-adopt-title">How many trees would you like?</h2>
                   </label><br />
                 <input className="mt-2 mb-2 number-count" type="number" id="quantity" name="quantity" min="1" max="100" />
