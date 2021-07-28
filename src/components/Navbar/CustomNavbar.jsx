@@ -21,6 +21,7 @@ import Account from "../pages/Account";
 import Mytrees from "../pages/MyTrees";
 import Mystore from "../pages/MyStore";
 import SuccessPage from "../pages/Success";
+import Loading from "../pages/Loading";
 
 export default function CustomNavbar(props) {
 
@@ -105,6 +106,9 @@ export default function CustomNavbar(props) {
             </Route>
             <Route path="/partners">
               <Partners />
+            </Route>
+            <Route path="/Loading">
+              <Loading />
             </Route>
             {/* private routes  */}
             <PrivateRoute path="/adopt">

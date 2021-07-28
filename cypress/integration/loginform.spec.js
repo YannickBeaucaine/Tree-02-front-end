@@ -1,6 +1,7 @@
 /// <reference types="cypress" />
 
 describe("renders the home page",() => {
+    
     beforeEach(() => {
         cy.visit("http://localhost:3001/")
     })
@@ -14,8 +15,11 @@ describe("renders the home page",() => {
 
  
     it("login test", ()=>{
-        cy.get('.email-input');
-        cy.get('.password-input');
+
+        cy.intercept('POST','/login',)
+      
+        cy.get('.email-input').type('alice@test.com').should('have.value','alice@test.com');
+        cy.get('.password-input').type('Password').should('have.value','Password');
         cy.get('.submit-button').click();
     })
     it("should render stats component", () =>{
