@@ -10,8 +10,20 @@ export class MyTreeMap extends Component {
       let data = JSON.parse(sessionStorage.getItem('getAdopter'))
       sessionStorage.setItem('adopterTrees', JSON.stringify(data.trees))
     }
+
+    this.state = {
+      loading: true
+  }
     
   }
+
+  componentDidMount(){
+    if(this.state.loading) {
+      this.forceUpdate()
+    }
+    this.setState({ loading: false})
+}
+
 
   createMarkers = (trees) => {
     if (trees) {

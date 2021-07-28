@@ -8,7 +8,6 @@ export default function LoginForm() {
   // rerouting to a page when logged in  2/3
   const history = useHistory();
   const [auth, setAuth] = useContext(AuthContext);
-  const [errorMessage, setErrorMessage] = useState('');
   const [loginForm, setLoginForm] = useState({ email: '', password: '' });
 
   const changeInput = e => {
@@ -83,7 +82,6 @@ export default function LoginForm() {
         });
       }
       else{
-        setErrorMessage(response)
         history.push('/Home')
       }
     })
@@ -95,7 +93,7 @@ export default function LoginForm() {
         treeAPIrequest('getAdopter', sessionStorage.getItem('store_key'), sessionStorage.getItem('key'))
         .then((response) => {
           sessionStorage.setItem('getAdopter', JSON.stringify(response.result));
-          history.push('/MyStore')
+          history.push('/Loading')
         })
         .catch((err) => {
           console.log(err)

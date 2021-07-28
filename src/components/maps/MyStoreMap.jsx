@@ -6,6 +6,7 @@ import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
 export class MyStoreMap extends Component {
 
+
   parseAdopters = () => {
     try {
       let data = JSON.parse(sessionStorage.getItem('getAdopters'))
@@ -35,6 +36,7 @@ export class MyStoreMap extends Component {
       ));
     }
   };
+
 
   render() {
 
